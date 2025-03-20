@@ -296,7 +296,7 @@ const LearnPage = () => {
             </div>
             
             {/* Connect with us call-to-action */}
-            <div className="bg-gradient-to-r from-japan-red to-japan-lightRed rounded-xl p-6 shadow-lg border border-white/20 flex flex-col justify-center items-center text-center">
+            <div className="bg-gradient-to-r from-japan-red to-japan-lightRed rounded-xl p-6 shadow-lg border border-white/20 flex flex-col justify-center items-center text-center text-white\">">
               <h3 className="text-xl font-semibold mb-3 text-white">Ready to Monetize Your Passion?</h3>
               <p className="mb-6 text-white">
                 Contact us to discuss partnership opportunities and start earning from your Japanese language knowledge.
