@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import CherryBlossomsEffect from "./components/CherryBlossomsEffect";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/Index";
@@ -25,7 +24,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="min-h-screen flex flex-col">
-          <CherryBlossomsEffect />
+          {/* CherryBlossomsEffect removed as requested */}
           <Navbar />
           <main className="flex-grow">
             <Routes>
