@@ -1,10 +1,12 @@
-
 import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import CardComponent from '../components/CardComponent';
+import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const LearnPage = () => {
   const [activeTab, setActiveTab] = useState('jlpt');
+  const isMobile = useIsMobile();
 
   return (
     <div className="min-h-screen">
@@ -312,19 +314,115 @@ const LearnPage = () => {
                     Join our WhatsApp group to connect with other Japanese language learners and native speakers.
                   </p>
                 </div>
-                <a 
-                  href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="button-primary w-full md:w-auto text-center px-8 py-3"
+                <Button 
+                  className="bg-japan-red hover:bg-japan-red/90 text-white w-full md:w-auto px-4 py-2 md:px-8"
+                  asChild
                 >
-                  Join India-Japan WhatsApp Group
-                </a>
+                  <a 
+                    href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Join India-Japan WhatsApp Group
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
         </section>
       )}
+
+      {/* Monetization Strategies Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-japan-navy to-japan-darkBlue text-white">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading 
+            title="Monetization Strategies" 
+            subtitle="Multiple revenue streams to turn your passion for Japan into a sustainable business" 
+            className="mb-12 text-white"
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Language Institute Partnerships */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-japan-sakura">Language Institute Partnerships</h3>
+              <p className="text-white/80 mb-4">
+                Partner with Japanese language schools for monthly advertising (₹300/month). Highlight their courses, teachers, and success stories.
+              </p>
+              <div className="mt-auto">
+                <p className="inline-block mt-2 text-japan-sakura font-semibold">
+                  Potential: With 20 schools, earn ₹6,000 monthly.
+                </p>
+              </div>
+            </div>
+            
+            {/* Affiliate Marketing */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-japan-sakura">Affiliate Marketing</h3>
+              <p className="text-white/80 mb-4">
+                Join Amazon, Rakuten, and JTB affiliate programs to earn commissions from Japanese language textbooks, travel gear, and tour bookings.
+              </p>
+              <div className="mt-auto">
+                <p className="inline-block mt-2 text-japan-sakura font-semibold">
+                  Potential: Earn 3-10% commission on each sale.
+                </p>
+              </div>
+            </div>
+            
+            {/* Display Advertising */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-japan-sakura">Display Advertising</h3>
+              <p className="text-white/80 mb-4">
+                Implement Google AdSense to display targeted ads related to Japan travel, language learning, and cultural experiences.
+              </p>
+              <div className="mt-auto">
+                <p className="inline-block mt-2 text-japan-sakura font-semibold">
+                  Potential: Generate revenue based on impressions and clicks.
+                </p>
+              </div>
+            </div>
+            
+            {/* Premium Content */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-japan-sakura">Premium Content</h3>
+              <p className="text-white/80 mb-4">
+                Create a members-only section with exclusive learning materials, travel itineraries, and cultural insights for a monthly subscription fee.
+              </p>
+              <div className="mt-auto">
+                <p className="inline-block mt-2 text-japan-sakura font-semibold">
+                  Potential: Charge ₹199/month for premium access.
+                </p>
+              </div>
+            </div>
+            
+            {/* Travel Agency Partnerships */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 transform hover:scale-105 transition-transform duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-japan-sakura">Travel Agency Partnerships</h3>
+              <p className="text-white/80 mb-4">
+                Partner with travel agencies specializing in Japan tours to offer special packages to your audience.
+              </p>
+              <div className="mt-auto">
+                <p className="inline-block mt-2 text-japan-sakura font-semibold">
+                  Potential: Earn referral fees for each booking made through your site.
+                </p>
+              </div>
+            </div>
+            
+            {/* Connect with us call-to-action */}
+            <div className="bg-gradient-to-r from-japan-red to-japan-lightRed rounded-xl p-6 shadow-lg border border-white/20 flex flex-col justify-center items-center text-center">
+              <h3 className="text-xl font-semibold mb-3">Ready to Monetize Your Passion?</h3>
+              <p className="mb-6">
+                Contact us to discuss partnership opportunities and start earning from your Japanese language knowledge.
+              </p>
+              <Button
+                className="bg-white text-japan-red hover:bg-white/90"
+                asChild
+              >
+                <a href="#Contact">Contact Us Today</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -26,7 +26,10 @@ const SectionHeading = ({
         </span>
       </h2>
       {subtitle && (
-        <p className="text-muted-foreground mt-2 max-w-3xl">
+        <p className={cn(
+          "mt-2 max-w-3xl",
+          className?.includes('text-white') ? 'text-white/80' : 'text-muted-foreground'
+        )}>
           {subtitle}
         </p>
       )}
