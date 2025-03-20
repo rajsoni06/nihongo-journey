@@ -20,16 +20,8 @@ const ImageSlider = ({
   autoPlayInterval = 4000,
 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isLoaded, setIsLoaded] = useState<boolean[]>(Array(images.length).fill(false));
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
-
-  // Handle image loading
-  const handleImageLoad = (index: number) => {
-    const newIsLoaded = [...isLoaded];
-    newIsLoaded[index] = true;
-    setIsLoaded(newIsLoaded);
-  };
 
   // Navigation functions
   const goToNext = useCallback(() => {
@@ -98,17 +90,11 @@ const ImageSlider = ({
               index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
             }`}
           >
-            {/* Blur placeholder while loading */}
-            <div className="absolute inset-0 bg-gray-200 animate-pulse"></div>
-            
             {/* Actual image */}
             <img
               src={image.src}
               alt={image.alt}
-              className={`w-full h-full object-cover transition-opacity duration-500 ${
-                isLoaded[index] ? 'opacity-100' : 'opacity-0'
-              }`}
-              onLoad={() => handleImageLoad(index)}
+              className="w-full h-full object-cover"
             />
             
             {/* Caption */}

@@ -37,7 +37,6 @@ const CardComponent = ({
         className
       )}>
         <div className="relative overflow-hidden aspect-video rounded-t-xl">
-          <div className="absolute inset-0 bg-gray-200 animate-pulse"></div>
           <img 
             src={image} 
             alt={title} 

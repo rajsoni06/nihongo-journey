@@ -304,19 +304,23 @@ const LearnPage = () => {
               </div>
             </div>
             
-            <div className="p-8 bg-white rounded-xl shadow-lg text-center">
-              <h3 className="text-2xl font-semibold mb-4">Looking for a Study Partner?</h3>
-              <p className="mb-6">
-                Join our WhatsApp group to connect with other Japanese language learners and native speakers.
-              </p>
-              <a 
-                href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="button-primary"
-              >
-                Join India-Japan WhatsApp Group
-              </a>
+            <div className="p-8 bg-white rounded-xl shadow-lg">
+              <div className="md:flex md:items-center md:justify-between">
+                <div className="mb-6 md:mb-0 md:max-w-md">
+                  <h3 className="text-2xl font-semibold mb-4">Looking for a Study Partner?</h3>
+                  <p className="mb-6 md:mb-0">
+                    Join our WhatsApp group to connect with other Japanese language learners and native speakers.
+                  </p>
+                </div>
+                <a 
+                  href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="button-primary w-full md:w-auto text-center px-8 py-3"
+                >
+                  Join India-Japan WhatsApp Group
+                </a>
+              </div>
             </div>
           </div>
         </section>

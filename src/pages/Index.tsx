@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import ImageSlider from '../components/ImageSlider';
 import SectionHeading from '../components/SectionHeading';
 import CardComponent from '../components/CardComponent';
+import ScrollDownIndicator from '../components/ScrollDownIndicator';
 
 const HomePage = () => {
   const [mounted, setMounted] = useState(false);
@@ -96,6 +97,8 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
+
+        <ScrollDownIndicator />
       </section>
 
       {/* Site Introduction */}

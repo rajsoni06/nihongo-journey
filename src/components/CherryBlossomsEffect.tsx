@@ -1,8 +1,6 @@
 
-import { useEffect, useState } from 'react';
-
+// Component completely disabled as requested
 const CherryBlossomsEffect = () => {
-  // Empty component - animation disabled as requested
   return null;
 };
 

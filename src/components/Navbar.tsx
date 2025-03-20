@@ -100,14 +100,13 @@ const Navbar = () => {
       <nav className="fixed top-16 left-0 w-full bg-gradient-to-r from-japan-navy to-japan-indigo backdrop-blur-md z-30 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="hidden md:flex justify-start h-12 space-x-8">
-            {/* Courses Dropdown - Enhanced with 3D effect */}
-            <div className="relative flex items-center h-full">
+            {/* Courses Dropdown - Enhanced with 3D effect and hover */}
+            <div 
+              className="relative flex items-center h-full"
+              onMouseEnter={() => setCoursesDropdownOpen(true)}
+              onMouseLeave={() => setCoursesDropdownOpen(false)}
+            >
               <button 
-                onClick={() => {
-                  setCoursesDropdownOpen(!coursesDropdownOpen);
-                  setDestinationsDropdownOpen(false);
-                  setInterestsDropdownOpen(false);
-                }}
                 className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105"
               >
                 <span className="font-medium bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Courses</span>
@@ -147,14 +146,13 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Destinations Dropdown - Enhanced */}
-            <div className="relative flex items-center h-full">
+            {/* Destinations Dropdown - Enhanced with hover */}
+            <div 
+              className="relative flex items-center h-full"
+              onMouseEnter={() => setDestinationsDropdownOpen(true)}
+              onMouseLeave={() => setDestinationsDropdownOpen(false)}
+            >
               <button 
-                onClick={() => {
-                  setDestinationsDropdownOpen(!destinationsDropdownOpen);
-                  setCoursesDropdownOpen(false);
-                  setInterestsDropdownOpen(false);
-                }}
                 className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105"
               >
                 <span className="font-medium bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Destinations</span>
@@ -203,14 +201,13 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Interests Dropdown - Enhanced */}
-            <div className="relative flex items-center h-full">
+            {/* Interests Dropdown - Enhanced with hover */}
+            <div 
+              className="relative flex items-center h-full"
+              onMouseEnter={() => setInterestsDropdownOpen(true)}
+              onMouseLeave={() => setInterestsDropdownOpen(false)}
+            >
               <button 
-                onClick={() => {
-                  setInterestsDropdownOpen(!interestsDropdownOpen);
-                  setCoursesDropdownOpen(false);
-                  setDestinationsDropdownOpen(false);
-                }}
                 className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105"
               >
                 <span className="font-medium bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Interests</span>
