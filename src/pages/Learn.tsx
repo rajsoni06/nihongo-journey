@@ -225,7 +225,7 @@ const LearnPage = () => {
         </section>}
 
       {/* Monetization Strategies Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-japan-navy to-japan-darkBlue text-white bg-gray-500">
+      <section className="py-16 px-4 bg-gradient-to-r from-japan-navy to-japan-darkBlue text-white bg-gray-600">
         <div className="max-w-7xl mx-auto">
           <SectionHeading title="Monetization Strategies" subtitle="Multiple revenue streams to turn your passion for Japan into a sustainable business" className="mb-12 text-white" />
           
