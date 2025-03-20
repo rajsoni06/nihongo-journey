@@ -1,24 +1,16 @@
-
 import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import CardComponent from '../components/CardComponent';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const LearnPage = () => {
   const [activeTab, setActiveTab] = useState('jlpt');
   const isMobile = useIsMobile();
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 px-4 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img 
-            src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-            alt="Japanese Study Books" 
-            className="w-full h-full object-cover" 
-          />
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Japanese Study Books" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         </div>
 
@@ -34,34 +26,13 @@ const LearnPage = () => {
       <section className="py-8 px-4 bg-white border-b">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4">
-            <button 
-              onClick={() => setActiveTab('jlpt')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                activeTab === 'jlpt' 
-                  ? 'bg-japan-red text-white' 
-                  : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-            >
+            <button onClick={() => setActiveTab('jlpt')} className={`px-4 py-2 rounded-lg transition-colors ${activeTab === 'jlpt' ? 'bg-japan-red text-white' : 'bg-gray-100 hover:bg-gray-200'}`}>
               JLPT Levels
             </button>
-            <button 
-              onClick={() => setActiveTab('beginners')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                activeTab === 'beginners' 
-                  ? 'bg-japan-red text-white' 
-                  : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-            >
+            <button onClick={() => setActiveTab('beginners')} className={`px-4 py-2 rounded-lg transition-colors ${activeTab === 'beginners' ? 'bg-japan-red text-white' : 'bg-gray-100 hover:bg-gray-200'}`}>
               For Beginners
             </button>
-            <button 
-              onClick={() => setActiveTab('resources')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                activeTab === 'resources' 
-                  ? 'bg-japan-red text-white' 
-                  : 'bg-gray-100 hover:bg-gray-200'
-              }`}
-            >
+            <button onClick={() => setActiveTab('resources')} className={`px-4 py-2 rounded-lg transition-colors ${activeTab === 'resources' ? 'bg-japan-red text-white' : 'bg-gray-100 hover:bg-gray-200'}`}>
               Additional Resources
             </button>
           </div>
@@ -69,29 +40,14 @@ const LearnPage = () => {
       </section>
 
       {/* JLPT Levels Content */}
-      {activeTab === 'jlpt' && (
-        <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
+      {activeTab === 'jlpt' && <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-7xl mx-auto">
-            <SectionHeading 
-              title="JLPT - Levels" 
-              subtitle="The Japanese Language Proficiency Test has five levels, with N5 being the easiest and N1 the most difficult." 
-              className="mb-12"
-            />
+            <SectionHeading title="JLPT - Levels" subtitle="The Japanese Language Proficiency Test has five levels, with N5 being the easiest and N1 the most difficult." className="mb-12" />
             
             <div className="mb-12">
               <div className="bg-white shadow-md rounded-xl overflow-hidden">
-                <img 
-                  src="https://www.jlpt.jp/e/about/img/levelsummary_h1.gif" 
-                  alt="N1-N5: Summary of Linguistic Competence Required for Each Level" 
-                  className="w-full max-w-full h-auto"
-                />
-                <img 
-                  src="https://www.jlpt.jp/e/about/img/levelsummary_lvlbar.gif" 
-                  width="665" 
-                  height="52" 
-                  alt="N1 difficult ←→ easy N5" 
-                  className="w-full max-w-full h-auto"
-                />
+                <img src="https://www.jlpt.jp/e/about/img/levelsummary_h1.gif" alt="N1-N5: Summary of Linguistic Competence Required for Each Level" className="w-full max-w-full h-auto" />
+                <img src="https://www.jlpt.jp/e/about/img/levelsummary_lvlbar.gif" width="665" height="52" alt="N1 difficult ←→ easy N5" className="w-full max-w-full h-auto" />
                 <div className="p-6">
                   <p className="mb-4">
                     N4 and N5 measure the level of understanding of basic Japanese mainly learned in class. N1 and N2 measure the level of understanding of Japanese used in a broad range of scenes in actual everyday life. N3 is a bridging level between N1/N2 and N4/N5.
@@ -104,82 +60,31 @@ const LearnPage = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              <CardComponent
-                image="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-                title="JLPT - N1"
-                description="The most advanced level of the Japanese Language Proficiency Test. Passing N1 demonstrates the ability to understand Japanese used in a variety of complicated situations."
-                externalLink="https://drive.google.com/file/d/1Xhu7BJV7Iur5MFTCR7icvQnQRzaY2NQ_/view?usp=sharing"
-              />
-              <CardComponent
-                image="https://images.unsplash.com/photo-1554672408-730436b60dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                title="JLPT - N2"
-                description="The second-highest level of the JLPT. N2 certifies that you can understand Japanese used in everyday situations, and in a variety of circumstances to a certain degree."
-                externalLink="https://drive.google.com/file/d/1Xq3abGiV4yR0ZMk6pII1UN_46xxQbPAJ/view?usp=drive_link"
-              />
-              <CardComponent
-                image="https://65.media.tumblr.com/8c81e80f7abc90f59a61913284dda0a8/tumblr_inline_o7ckapQes21tqv1ik_500.gif"
-                title="JLPT - N3"
-                description="N3 is the intermediate level of the Japanese Language Proficiency Test and is described as the ability to understand Japanese used in everyday situations to a certain degree."
-                externalLink="https://drive.google.com/file/d/1ZpJrnG593XgiUcqtu7VMwWgZAtybzlOQ/view?usp=sharing"
-              />
-              <CardComponent
-                image="https://cotoacademy.com/app/uploads/2020/04/JLPT-N4-ta-bakari.png"
-                title="JLPT - N4"
-                description="N4 is the second level of the Japanese Language Proficiency Test (JLPT). To pass the JLPT N4, you need to be able to read 300 kanji and know about 1,500 vocabulary words."
-                externalLink="https://drive.google.com/file/d/1UJYOGGcGOTv8_N7Slk0D8EEfW94Vf5dw/view?usp=drivesdk"
-              />
-              <CardComponent
-                image="https://www.attainj.co.jp/attain-online-japanese/material/images/jlpt-N5-en-1.jpg"
-                title="JLPT - N5"
-                description="N5 is the most basic level of the JLPT and just requires you to understand some basic Japanese like hiragana, katakana, and basic kanji as well as from spoken conversations."
-                externalLink="https://drive.google.com/file/d/1VKWTSLRO441fbNuicU8OkVYoU_htGBYZ/view?usp=drivesdk"
-              />
+              <CardComponent image="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" title="JLPT - N1" description="The most advanced level of the Japanese Language Proficiency Test. Passing N1 demonstrates the ability to understand Japanese used in a variety of complicated situations." externalLink="https://drive.google.com/file/d/1Xhu7BJV7Iur5MFTCR7icvQnQRzaY2NQ_/view?usp=sharing" />
+              <CardComponent image="https://images.unsplash.com/photo-1554672408-730436b60dde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" title="JLPT - N2" description="The second-highest level of the JLPT. N2 certifies that you can understand Japanese used in everyday situations, and in a variety of circumstances to a certain degree." externalLink="https://drive.google.com/file/d/1Xq3abGiV4yR0ZMk6pII1UN_46xxQbPAJ/view?usp=drive_link" />
+              <CardComponent image="https://65.media.tumblr.com/8c81e80f7abc90f59a61913284dda0a8/tumblr_inline_o7ckapQes21tqv1ik_500.gif" title="JLPT - N3" description="N3 is the intermediate level of the Japanese Language Proficiency Test and is described as the ability to understand Japanese used in everyday situations to a certain degree." externalLink="https://drive.google.com/file/d/1ZpJrnG593XgiUcqtu7VMwWgZAtybzlOQ/view?usp=sharing" />
+              <CardComponent image="https://cotoacademy.com/app/uploads/2020/04/JLPT-N4-ta-bakari.png" title="JLPT - N4" description="N4 is the second level of the Japanese Language Proficiency Test (JLPT). To pass the JLPT N4, you need to be able to read 300 kanji and know about 1,500 vocabulary words." externalLink="https://drive.google.com/file/d/1UJYOGGcGOTv8_N7Slk0D8EEfW94Vf5dw/view?usp=drivesdk" />
+              <CardComponent image="https://www.attainj.co.jp/attain-online-japanese/material/images/jlpt-N5-en-1.jpg" title="JLPT - N5" description="N5 is the most basic level of the JLPT and just requires you to understand some basic Japanese like hiragana, katakana, and basic kanji as well as from spoken conversations." externalLink="https://drive.google.com/file/d/1VKWTSLRO441fbNuicU8OkVYoU_htGBYZ/view?usp=drivesdk" />
               <div className="glass-card p-6 flex flex-col justify-center items-center text-center">
                 <h3 className="text-xl font-semibold mb-4">Looking for Official JLPT Information?</h3>
                 <p className="mb-4">Visit the official JLPT website for test dates, registration information, and official sample questions.</p>
-                <a 
-                  href="https://www.jlpt.jp/e/index.html" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="button-primary"
-                >
+                <a href="https://www.jlpt.jp/e/index.html" target="_blank" rel="noopener noreferrer" className="button-primary">
                   Visit Official JLPT Site
                 </a>
               </div>
             </div>
           </div>
-        </section>
-      )}
+        </section>}
 
       {/* For Beginners Content */}
-      {activeTab === 'beginners' && (
-        <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
+      {activeTab === 'beginners' && <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-7xl mx-auto">
-            <SectionHeading 
-              title="For Beginners" 
-              subtitle="Getting started with Japanese language study" 
-              className="mb-12"
-            />
+            <SectionHeading title="For Beginners" subtitle="Getting started with Japanese language study" className="mb-12" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <CardComponent
-                image="https://images.unsplash.com/photo-1627465688839-f639a8ff6003?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                title="Japanese Alphabets"
-                description="Learn the three Japanese writing systems: Hiragana, Katakana, and Kanji. This beginner-friendly guide will help you master the basics of Japanese writing."
-                externalLink="https://drive.google.com/file/d/1_FgeXtrY8S-JRY7rhC3uIxyKxQGHYeVK/view?usp=sharing"
-              />
-              <CardComponent
-                image="https://images.unsplash.com/photo-1633412792811-20a28152f28e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                title="Absolute Beginner Course"
-                description="Start your Japanese learning journey with this comprehensive guide for absolute beginners, covering basic phrases, greetings, and essential vocabulary."
-                externalLink="https://drive.google.com/file/d/1V5VB6F2aSNmrpXw2_9P-9xnoFyLswH-e/view?usp=drivesdk"
-              />
-              <CardComponent
-                image="https://images.unsplash.com/photo-1600716946898-1fc80f9a14cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                title="Beginner Course"
-                description="Once you've mastered the basics, take your Japanese to the next level with this beginner course focused on everyday conversation and practical phrases."
-                externalLink="https://drive.google.com/file/d/1VNqheM7AI1TYL-Mow3mCHcCXPL_mk-nw/view?usp=sharing"
-              />
+              <CardComponent image="https://images.unsplash.com/photo-1627465688839-f639a8ff6003?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" title="Japanese Alphabets" description="Learn the three Japanese writing systems: Hiragana, Katakana, and Kanji. This beginner-friendly guide will help you master the basics of Japanese writing." externalLink="https://drive.google.com/file/d/1_FgeXtrY8S-JRY7rhC3uIxyKxQGHYeVK/view?usp=sharing" />
+              <CardComponent image="https://images.unsplash.com/photo-1633412792811-20a28152f28e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" title="Absolute Beginner Course" description="Start your Japanese learning journey with this comprehensive guide for absolute beginners, covering basic phrases, greetings, and essential vocabulary." externalLink="https://drive.google.com/file/d/1V5VB6F2aSNmrpXw2_9P-9xnoFyLswH-e/view?usp=drivesdk" />
+              <CardComponent image="https://images.unsplash.com/photo-1600716946898-1fc80f9a14cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" title="Beginner Course" description="Once you've mastered the basics, take your Japanese to the next level with this beginner course focused on everyday conversation and practical phrases." externalLink="https://drive.google.com/file/d/1VNqheM7AI1TYL-Mow3mCHcCXPL_mk-nw/view?usp=sharing" />
             </div>
             
             <div className="mt-12 p-8 bg-white rounded-xl shadow-lg">
@@ -208,18 +113,12 @@ const LearnPage = () => {
               </ul>
             </div>
           </div>
-        </section>
-      )}
+        </section>}
 
       {/* Additional Resources Content */}
-      {activeTab === 'resources' && (
-        <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
+      {activeTab === 'resources' && <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-7xl mx-auto">
-            <SectionHeading 
-              title="Additional Resources" 
-              subtitle="Tools and resources to enhance your Japanese language learning journey" 
-              className="mb-12"
-            />
+            <SectionHeading title="Additional Resources" subtitle="Tools and resources to enhance your Japanese language learning journey" className="mb-12" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="glass-card p-8">
@@ -315,32 +214,20 @@ const LearnPage = () => {
                     Join our WhatsApp group to connect with other Japanese language learners and native speakers.
                   </p>
                 </div>
-                <Button 
-                  className="bg-japan-red hover:bg-japan-red/90 text-white w-full md:w-auto px-4 py-2 md:px-8"
-                  asChild
-                >
-                  <a 
-                    href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
+                <Button className="bg-japan-red hover:bg-japan-red/90 text-white w-full md:w-auto px-4 py-2 md:px-8" asChild>
+                  <a href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM" target="_blank" rel="noopener noreferrer">
                     Join India-Japan WhatsApp Group
                   </a>
                 </Button>
               </div>
             </div>
           </div>
-        </section>
-      )}
+        </section>}
 
       {/* Monetization Strategies Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-japan-navy to-japan-darkBlue text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-japan-navy to-japan-darkBlue text-white bg-gray-500">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading 
-            title="Monetization Strategies" 
-            subtitle="Multiple revenue streams to turn your passion for Japan into a sustainable business" 
-            className="mb-12 text-white"
-          />
+          <SectionHeading title="Monetization Strategies" subtitle="Multiple revenue streams to turn your passion for Japan into a sustainable business" className="mb-12 text-white" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Language Institute Partnerships */}
@@ -414,18 +301,13 @@ const LearnPage = () => {
               <p className="mb-6 text-white">
                 Contact us to discuss partnership opportunities and start earning from your Japanese language knowledge.
               </p>
-              <Button
-                className="bg-white text-japan-red hover:bg-white/90"
-                asChild
-              >
-                <a href="#Contact" className="text-japan-red">Contact Us Today</a>
+              <Button className="bg-white text-japan-red hover:bg-white/90" asChild>
+                <a href="#Contact" className="text-japan-white">Contact Us Today</a>
               </Button>
             </div>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default LearnPage;
