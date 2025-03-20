@@ -21,14 +21,14 @@ const SectionHeading = ({
       className
     )}>
       <h2 className="section-title relative">
-        <span className="inline-block transform hover:scale-105 transition-transform duration-300">
+        <span className="inline-block">
           {title}
         </span>
       </h2>
       {subtitle && (
         <p className={cn(
           "mt-2 max-w-3xl",
-          className?.includes('text-white') ? 'text-white/80' : 'text-muted-foreground'
+          className?.includes('text-white') ? 'text-white/90' : 'text-muted-foreground'
         )}>
           {subtitle}
         </p>
