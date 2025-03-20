@@ -1,9 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Home, BookOpen, Plane, Map, MapPin, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
@@ -15,9 +13,7 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
-
-  return (
-    <header className="z-50">
+  return <header className="z-50">
       {/* Main Navbar - Always visible */}
       <nav className="fixed top-0 left-0 z-40 w-full bg-black/80 backdrop-blur-md shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +21,7 @@ const Navbar = () => {
             {/* Logo and brand */}
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="flex items-center">
-                <div className="bg-gradient-to-r from-japan-sakura to-japan-lightRed text-white px-3 py-2 rounded-lg font-bold text-lg mr-2 transition-transform duration-300 hover:scale-105 shadow-lg border border-white/20 backdrop-blur-sm">
+                <div className="bg-gradient-to-r from-japan-sakura to-japan-lightRed text-white rounded-lg font-bold text-lg mr-2 transition-transform duration-300 hover:scale-105 shadow-lg border border-white/20 backdrop-blur-sm px-[11px] py-[7px]">
                   NIHONGO JOURNEY 🗾
                 </div>
               </Link>
@@ -55,15 +51,8 @@ const Navbar = () => {
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-white/10 focus:outline-none transition duration-150 ease-in-out"
-              >
-                {isOpen ? (
-                  <X className="block h-6 w-6" aria-hidden="true" />
-                ) : (
-                  <Menu className="block h-6 w-6" aria-hidden="true" />
-                )}
+              <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-white/10 focus:outline-none transition duration-150 ease-in-out">
+                {isOpen ? <X className="block h-6 w-6" aria-hidden="true" /> : <Menu className="block h-6 w-6" aria-hidden="true" />}
               </button>
             </div>
           </div>
@@ -101,20 +90,13 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="hidden md:flex justify-start h-12 space-x-8">
             {/* Courses Dropdown - Enhanced with 3D effect and hover */}
-            <div 
-              className="relative flex items-center h-full"
-              onMouseEnter={() => setCoursesDropdownOpen(true)}
-              onMouseLeave={() => setCoursesDropdownOpen(false)}
-            >
-              <button 
-                className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105"
-              >
+            <div className="relative flex items-center h-full" onMouseEnter={() => setCoursesDropdownOpen(true)} onMouseLeave={() => setCoursesDropdownOpen(false)}>
+              <button className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105">
                 <span className="font-medium bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Courses</span>
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${coursesDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
-              {coursesDropdownOpen && (
-                <div className="dropdown-content absolute top-full left-0 mt-1 w-64 max-h-[70vh] overflow-y-auto rounded-md bg-black/90 backdrop-blur-md shadow-lg z-50 border border-white/20 animate-fade-in">
+              {coursesDropdownOpen && <div className="dropdown-content absolute top-full left-0 mt-1 w-64 max-h-[70vh] overflow-y-auto rounded-md bg-black/90 backdrop-blur-md shadow-lg z-50 border border-white/20 animate-fade-in">
                   <div className="py-2 px-4 space-y-2">
                     <a href="https://drive.google.com/file/d/1Xhu7BJV7Iur5MFTCR7icvQnQRzaY2NQ_/view?usp=sharing" target="_blank" className="block px-4 py-2 text-sm text-white hover:bg-white/10 rounded-md transition-all hover:translate-x-1">
                       📼 (Super Advanced) N1 Course
@@ -142,25 +124,17 @@ const Navbar = () => {
                       📄 Japanese Alphabets
                     </a>
                   </div>
-                </div>
-              )}
+                </div>}
             </div>
 
             {/* Destinations Dropdown - Enhanced with hover */}
-            <div 
-              className="relative flex items-center h-full"
-              onMouseEnter={() => setDestinationsDropdownOpen(true)}
-              onMouseLeave={() => setDestinationsDropdownOpen(false)}
-            >
-              <button 
-                className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105"
-              >
+            <div className="relative flex items-center h-full" onMouseEnter={() => setDestinationsDropdownOpen(true)} onMouseLeave={() => setDestinationsDropdownOpen(false)}>
+              <button className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105">
                 <span className="font-medium bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Destinations</span>
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${destinationsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
-              {destinationsDropdownOpen && (
-                <div className="dropdown-content absolute top-full left-0 mt-1 w-64 max-h-[70vh] overflow-y-auto rounded-md bg-black/90 backdrop-blur-md shadow-lg z-50 border border-white/20 animate-fade-in">
+              {destinationsDropdownOpen && <div className="dropdown-content absolute top-full left-0 mt-1 w-64 max-h-[70vh] overflow-y-auto rounded-md bg-black/90 backdrop-blur-md shadow-lg z-50 border border-white/20 animate-fade-in">
                   <div className="py-2 px-4 space-y-2">
                     <a href="https://www.japan-guide.com/e/e2164.html" target="_blank" className="block px-4 py-2 text-sm text-white hover:bg-white/10 rounded-md transition-all hover:translate-x-1">
                       📍 Tokyo
@@ -197,25 +171,17 @@ const Navbar = () => {
                       All Areas &gt;
                     </a>
                   </div>
-                </div>
-              )}
+                </div>}
             </div>
 
             {/* Interests Dropdown - Enhanced with hover */}
-            <div 
-              className="relative flex items-center h-full"
-              onMouseEnter={() => setInterestsDropdownOpen(true)}
-              onMouseLeave={() => setInterestsDropdownOpen(false)}
-            >
-              <button 
-                className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105"
-              >
+            <div className="relative flex items-center h-full" onMouseEnter={() => setInterestsDropdownOpen(true)} onMouseLeave={() => setInterestsDropdownOpen(false)}>
+              <button className="flex items-center text-white hover:text-white/80 focus:outline-none transition-colors transform hover:scale-105">
                 <span className="font-medium bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Interests</span>
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${interestsDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
-              {interestsDropdownOpen && (
-                <div className="dropdown-content absolute top-full left-0 mt-1 w-64 max-h-[70vh] overflow-y-auto rounded-md bg-black/90 backdrop-blur-md shadow-lg z-50 border border-white/20 animate-fade-in">
+              {interestsDropdownOpen && <div className="dropdown-content absolute top-full left-0 mt-1 w-64 max-h-[70vh] overflow-y-auto rounded-md bg-black/90 backdrop-blur-md shadow-lg z-50 border border-white/20 animate-fade-in">
                   <div className="py-2 px-4 space-y-2">
                     <a href="https://www.japan-guide.com/e/e2025.html" target="_blank" className="block px-4 py-2 text-sm text-white hover:bg-white/10 rounded-md transition-all hover:translate-x-1">
                       🛏 Accommodation
@@ -230,8 +196,7 @@ const Navbar = () => {
                       🗾 Culture
                     </a>
                   </div>
-                </div>
-              )}
+                </div>}
             </div>
           </div>
         </div>
@@ -239,8 +204,6 @@ const Navbar = () => {
       
       {/* Spacer for fixed navbar - adjusted height for new layout */}
       <div className="h-28"></div>
-    </header>
-  );
+    </header>;
 };
-
 export default Navbar;
