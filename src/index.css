@@ -1,6 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   :root {
@@ -13,8 +20,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 353 93% 43%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -35,19 +42,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -61,8 +61,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 355 92% 45%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -79,6 +79,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -94,8 +95,72 @@
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 shadow-glass;
+  }
+  
+  .glass-card {
+    @apply rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-glass overflow-hidden transition-all duration-300 hover:shadow-glass-sm;
+  }
+  
+  .nav-link {
+    @apply relative px-3 py-2 font-medium text-white transition-colors before:absolute before:inset-x-0 before:bottom-0 before:h-[2px] before:origin-left before:scale-x-0 before:transform before:rounded-full before:bg-white before:transition-transform before:duration-300 hover:text-white/90 hover:before:scale-x-100;
+  }
+  
+  .button-primary {
+    @apply px-6 py-2.5 rounded-lg bg-gradient-to-r from-japan-red to-japan-lightRed text-white font-medium shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] active:translate-y-[0px] active:shadow-md;
+  }
+  
+  .button-outline {
+    @apply px-6 py-2.5 rounded-lg border border-japan-red text-japan-red font-medium transition-all duration-300 hover:bg-japan-red/10 active:bg-japan-red/20;
+  }
+  
+  .glass-button {
+    @apply px-6 py-2.5 rounded-lg glass text-white font-medium shadow-glass-sm transition-all duration-300 hover:bg-white/20 active:bg-white/30;
+  }
+  
+  .text-shimmer {
+    @apply bg-clip-text text-transparent bg-text-gradient bg-[length:400%_100%] animate-text-shimmer;
+  }
+  
+  .section-title {
+    @apply relative font-serif text-3xl md:text-4xl font-bold mb-6 pb-4 inline-block;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute bottom-0 left-0 w-1/2 h-1 bg-japan-red rounded-full;
+  }
+  
+  .cherry-blossom {
+    @apply absolute w-4 h-4 bg-japan-sakura rounded-full animate-cherry-fall;
+  }
+}
+
+.dropdown-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
