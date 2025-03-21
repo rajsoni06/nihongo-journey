@@ -42,7 +42,7 @@ const PlacesPage = () => {
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://media.istockphoto.com/id/543973306/photo/fushimi-inari-taisha.jpg?s=612x612&w=0&k=20&c=h9SsC4YyDj1cl8Rs1Sy2K1SuysWjlvdnaV2TTvzJV9M=",
       title: "FUSHIMI INARI SHRINE (伏見稲荷大社)",
       description: "Famous for its thousands of vermilion torii gates, Fushimi Inari is the most important shrine dedicated to Inari, the Shinto god of rice. The shrine sits at the base of Mount Inari, and the hike to the summit takes 2-3 hours.",
       link: "https://www.japan-guide.com/e/e3915.html",
@@ -50,7 +50,7 @@ const PlacesPage = () => {
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1593001865063-d82b4d05d7b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://media.istockphoto.com/id/502617555/photo/world-heritage-mount-fuji-and-lake-shoji.jpg?s=612x612&w=0&k=20&c=1aA-Z53dHEqc59HBiIwKJnQUKBX69BKa5dCU3E3Ck8w=",
       title: "MOUNT FUJI (富士山)",
       description: "Japan's highest mountain at 3,776 meters, the perfectly symmetrical volcanic cone of Mount Fuji is a national symbol and UNESCO World Heritage site. Climbing season runs from early July to mid-September.",
       link: "https://www.japan-guide.com/e/e2172.html",
@@ -58,7 +58,7 @@ const PlacesPage = () => {
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1624253321171-1be53e12e5fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
+      image: "https://cdn.pixabay.com/photo/2017/08/07/13/43/building-2603950_640.jpg",
       title: "TOKYO SKYTREE (東京スカイツリー)",
       description: "Tokyo Skytree is a broadcasting and observation tower in Sumida, Tokyo. At 634 meters, it is the tallest structure in Japan and the second tallest in the world at the time of its completion in 2012.",
       link: "https://www.japan-guide.com/e/e3064.html",
@@ -66,7 +66,7 @@ const PlacesPage = () => {
     },
     {
       id: 7,
-      image: "https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1953&q=80",
+      image: "https://media.istockphoto.com/id/577308518/photo/kyoto-bamboo-forest.jpg?s=612x612&w=0&k=20&c=0B33yX07VpHO9k4-yExKDGDxESvFzmYSGst-MDpuugg=",
       title: "ARASHIYAMA BAMBOO GROVE (嵐山)",
       description: "Located in western Kyoto, the Arashiyama Bamboo Grove is one of Japan's most photographed sights. The path through the towering bamboo is magical, especially early in the morning or on a rainy day.",
       link: "https://www.japan-guide.com/e/e3912.html",
@@ -74,7 +74,7 @@ const PlacesPage = () => {
     },
     {
       id: 8,
-      image: "https://images.unsplash.com/photo-1583416750470-965b2707b355?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://media.istockphoto.com/id/466734064/photo/nara-deer-roam-free-in-nara-park-japan.jpg?s=612x612&w=0&k=20&c=mVSsK8x8sEY7ka5sJ77Wc8v4u_MJ-dZWHsx1vT31dhc=",
       title: "NARA PARK (奈良公園)",
       description: "Home to hundreds of freely roaming deer, Nara Park is a large public park and one of the main attractions of Nara. The deer are considered sacred messengers of the gods in Shinto.",
       link: "https://www.japan-guide.com/e/e4103.html",
@@ -82,7 +82,7 @@ const PlacesPage = () => {
     },
     {
       id: 9,
-      image: "https://images.unsplash.com/photo-1598818384697-56df59fee3b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80",
+      image: "https://www.japan-guide.com/g21/3501_11.jpg",
       title: "HIMEJI CASTLE (姫路城)",
       description: "Widely considered Japan's most beautiful castle, Himeji Castle is a UNESCO World Heritage site and a national treasure. Its white exterior earned it the nickname 'White Heron Castle'.",
       link: "https://www.japan-guide.com/e/e3501.html",
@@ -90,7 +90,7 @@ const PlacesPage = () => {
     },
     {
       id: 10,
-      image: "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://static.vecteezy.com/system/resources/previews/002/057/710/non_2x/imperial-palace-in-tokyo-japan-free-photo.jpg",
       title: "TOKYO IMPERIAL PALACE (皇居)",
       description: "The primary residence of the Emperor of Japan, the Tokyo Imperial Palace is a large park-like area located in the Chiyoda ward of Tokyo. The public East Gardens and Outer Gardens offer beautiful landscapes year-round.",
       link: "https://www.japan-guide.com/e/e3017.html",
@@ -98,7 +98,7 @@ const PlacesPage = () => {
     },
     {
       id: 11,
-      image: "https://images.unsplash.com/photo-1618248945468-e07f3e80e256?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://media.istockphoto.com/id/522473665/photo/osaka-japan-at-dotonbori-canal.jpg?s=612x612&w=0&k=20&c=V0yJFfSYnR7Hui-WVTUP9w9E9E37IGWDGywqHmy6o_Q=",
       title: "DOTONBORI (道頓堀)",
       description: "Osaka's most famous entertainment district, Dotonbori is known for its bright neon lights, extravagant signage, and food culture. Don't miss the iconic Glico Running Man sign and the giant mechanical crab.",
       link: "https://www.japan-guide.com/e/e4001.html",
@@ -106,7 +106,7 @@ const PlacesPage = () => {
     },
     {
       id: 12,
-      image: "https://images.unsplash.com/photo-1548965594-1e718c0e8a87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      image: "https://www.signify.com/content/dam/signify/en-us/blog/posts/Spotlight/team-lab.jpg",
       title: "TEAMLAB BORDERLESS (チームラボ ボーダレス)",
       description: "A digital art museum created by the art collective teamLab, featuring immersive interactive installations that move out of rooms and communicate with other artworks, creating a borderless world of art.",
       link: "https://borderless.teamlab.art/",
@@ -229,7 +229,7 @@ const PlacesPage = () => {
             <div className="glass-card p-0 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" 
+                  src="https://voyeglobal.com/wp-content/uploads/2025/02/thumbnail-c882a9af-23fa-46be-80d4-f8e87022f315.jpg" 
                   alt="Cherry Blossoms in Spring" 
                   className="w-full h-full object-cover"
                 />
@@ -262,7 +262,7 @@ const PlacesPage = () => {
             <div className="glass-card p-0 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="https://images.unsplash.com/photo-1546528377-9049abbac868?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80" 
+                  src="https://i0.wp.com/tokyotreatblog.wpcomstaging.com/wp-content/uploads/2023/09/hanabi-matsuri-thumbnail.png?fit=1024%2C683&ssl=1" 
                   alt="Summer Festivals" 
                   className="w-full h-full object-cover"
                 />
@@ -295,7 +295,7 @@ const PlacesPage = () => {
             <div className="glass-card p-0 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                  src="https://blog.sakura.co/wp-content/uploads/2023/09/autumn-in-japan-thumbnail.png" 
                   alt="Autumn Foliage" 
                   className="w-full h-full object-cover"
                 />
@@ -328,7 +328,7 @@ const PlacesPage = () => {
             <div className="glass-card p-0 overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="https://images.unsplash.com/photo-1551621995-111811b8d94a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" 
+                  src="https://www.datocms-assets.com/101439/1700746278-skiing.jpg?auto=format&crop=focalpoint&fit=crop&fp-x=0.46&fp-y=0.57&h=800&w=1200" 
                   alt="Winter Snow" 
                   className="w-full h-full object-cover"
                 />

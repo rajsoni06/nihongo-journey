@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 
@@ -25,9 +24,9 @@ const AreasPage = () => {
         'Daisetsuzan National Park - Japan\'s largest national park',
         'Furano - Known for lavender fields in summer',
         'Niseko - Premier ski resort area',
-        'Shiretoko Peninsula - UNESCO World Heritage site known for diverse wildlife'
+        'Shiretoko Peninsula - UNESCO World Heritage site known for diverse wildlife',
       ],
-      image: 'https://images.unsplash.com/photo-1578321926907-715ae0383858?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: 'https://images.unsplash.com/photo-1578321926907-715ae0383858?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
     {
       id: 'tohoku',
@@ -39,9 +38,9 @@ const AreasPage = () => {
         'Sendai - The region\'s largest city',
         'Aomori - Famous for its Nebuta Festival',
         'Yamadera - Mountain temple with stunning views',
-        'Kakunodate - Well-preserved samurai district'
+        'Kakunodate - Well-preserved samurai district',
       ],
-      image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
     {
       id: 'kanto',
@@ -53,9 +52,9 @@ const AreasPage = () => {
         'Yokohama - Japan\'s second-largest city with a scenic harbor area',
         'Kamakura - Historic city with many temples and the Great Buddha',
         'Nikko - UNESCO World Heritage site with elaborate shrines',
-        'Mount Fuji - Japan\'s highest mountain (shared with Chubu region)'
+        'Mount Fuji - Japan\'s highest mountain (shared with Chubu region)',
       ],
-      image: 'https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80'
+      image: 'https://images.unsplash.com/photo-1551641506-ee5bf4cb45f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
     },
     {
       id: 'chubu',
@@ -67,9 +66,9 @@ const AreasPage = () => {
         'Kanazawa - Known for preserved samurai and geisha districts',
         'Shirakawa-go - UNESCO World Heritage village with traditional gassho-zukuri farmhouses',
         'Japanese Alps - Popular for hiking and skiing',
-        'Matsumoto - Home to one of Japan\'s oldest original castles'
+        'Matsumoto - Home to one of Japan\'s oldest original castles',
       ],
-      image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
     {
       id: 'kinki',
@@ -81,9 +80,9 @@ const AreasPage = () => {
         'Osaka - Known for its food culture and outgoing people',
         'Nara - Japan\'s first permanent capital with historic temples and free-roaming deer',
         'Kobe - Cosmopolitan port city famous for its beef',
-        'Mount Koya - Sacred Buddhist mountain with temple lodgings'
+        'Mount Koya - Sacred Buddhist mountain with temple lodgings',
       ],
-      image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
     {
       id: 'chugoku',
@@ -95,9 +94,9 @@ const AreasPage = () => {
         'Miyajima Island - Home to the iconic floating torii gate',
         'Himeji - Location of Japan\'s most spectacular castle',
         'Tottori - Famous for its sand dunes',
-        'Izumo - Site of one of Japan\'s most important shrines'
+        'Izumo - Site of one of Japan\'s most important shrines',
       ],
-      image: 'https://images.unsplash.com/photo-1575862922759-fe4d53901e63?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80'
+      image: 'https://images.unsplash.com/photo-1575862922759-fe4d53901e63?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
     },
     {
       id: 'shikoku',
@@ -109,9 +108,9 @@ const AreasPage = () => {
         'Takamatsu - Gateway to Shikoku with famous Ritsurin Garden',
         'Iya Valley - Remote valley with vine bridges and traditional farmhouses',
         'Naruto - Known for its whirlpools',
-        'The 88 Temple Pilgrimage - Famous Buddhist pilgrimage route'
+        'The 88 Temple Pilgrimage - Famous Buddhist pilgrimage route',
       ],
-      image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     },
     {
       id: 'kyushu',
@@ -123,53 +122,52 @@ const AreasPage = () => {
         'Nagasaki - Historic port city with international influences',
         'Kumamoto - Home to one of Japan\'s most impressive castles',
         'Beppu and Yufuin - Famous hot spring towns',
-        'Okinawa - Tropical beaches, unique culture, and American influence'
+        'Okinawa - Tropical beaches, unique culture, and American influence',
       ],
-      image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    }
+      image: 'https://images.unsplash.com/photo-1578637387939-43c525550085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 flex items-center justify-center overflow-hidden">
+      <section className="relative py-16 sm:py-20 md:py-24 px-4 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img 
-            src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-            alt="Japan Regions Map" 
-            className="w-full h-full object-cover" 
+          <img
+            src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Japan Regions Map"
+            className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         </div>
-
         <div className="max-w-4xl mx-auto text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Regions of Japan</h1>
-          <p className="text-xl max-w-2xl mx-auto animate-fade-in-up">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            Regions of Japan
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-up">
             Explore the diverse geographical areas that make up the Land of the Rising Sun.
           </p>
         </div>
       </section>
 
       {/* Introduction */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-12 sm:py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <SectionHeading 
-            title="Japan's Regions" 
-            subtitle="Japan is officially divided into eight distinct regions, each with its own culture, cuisine, and attractions." 
+          <SectionHeading
+            title="Japan's Regions"
+            subtitle="Japan is officially divided into eight distinct regions, each with its own culture, cuisine, and attractions."
           />
-          
-          <div className="prose prose-lg max-w-none mb-8">
+          <div className="prose prose-sm sm:prose-lg max-w-none mb-8">
             <p>
-              From the snow-covered mountains of Hokkaido in the north to the tropical beaches of Okinawa in the south, 
-              Japan's regions offer incredible diversity in landscapes, climates, and cultural experiences. 
-              Each region has developed its own unique identity while maintaining connections to the broader Japanese culture.
+              From the snow-covered mountains of Hokkaido in the north to the tropical beaches of Okinawa in the south,
+              Japan’s regions offer incredible diversity in landscapes, climates, and cultural experiences. Each region
+              has developed its own unique identity while maintaining connections to the broader Japanese culture.
             </p>
           </div>
-          
           <div className="rounded-xl overflow-hidden shadow-lg">
-            <img 
-              src="https://s3-ap-northeast-1.amazonaws.com/bhive-jp/media/yabai/article/2098/2098_1_map_prefectures.jpg" 
-              alt="Japan Map with Prefectures" 
+            <img
+              src="https://s3-ap-northeast-1.amazonaws.com/bhive-jp/media/yabai/article/2098/2098_1_map_prefectures.jpg"
+              alt="Japan Map with Prefectures"
               className="w-full h-auto"
             />
           </div>
@@ -177,61 +175,63 @@ const AreasPage = () => {
       </section>
 
       {/* Regions Interactive Map/List */}
-      <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Region List */}
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-xl shadow-md p-6 sticky top-32">
-                <h3 className="text-xl font-semibold mb-6">Select a Region</h3>
-                <ul className="space-y-3">
-                  {regions.map(region => (
+              <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 sticky top-4 sm:top-32">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Select a Region</h3>
+                <ul className="space-y-2 sm:space-y-3">
+                  {regions.map((region) => (
                     <li key={region.id}>
                       <button
                         onClick={() => setSelectedRegion(region.id)}
-                        className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
-                          selectedRegion === region.id 
-                            ? 'bg-japan-red text-white shadow-md' 
+                        className={`w-full text-left px-3 py-2 sm:px-4 sm:py-3 rounded-lg transition-all duration-300 ${
+                          selectedRegion === region.id
+                            ? 'bg-japan-red text-white shadow-md'
                             : 'bg-gray-100 hover:bg-gray-200'
                         }`}
                       >
-                        <span className="font-medium">{region.name}</span> <span className="text-sm">{region.japName}</span>
+                        <span className="font-medium text-sm sm:text-base">{region.name}</span>{' '}
+                        <span className="text-xs sm:text-sm">{region.japName}</span>
                       </button>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            
+
             {/* Region Details */}
             <div className="lg:col-span-2">
               {selectedRegion ? (
-                <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                  {regions.find(r => r.id === selectedRegion) && (
+                <div className="bg-white rounded-xl shadow-md overflow-hidden card-3d">
+                  {regions.find((r) => r.id === selectedRegion) && (
                     <>
-                      <div className="relative h-64 md:h-80">
-                        <img 
-                          src={regions.find(r => r.id === selectedRegion)?.image} 
-                          alt={regions.find(r => r.id === selectedRegion)?.name} 
+                      <div className="relative h-48 sm:h-64 md:h-80">
+                        <img
+                          src={regions.find((r) => r.id === selectedRegion)?.image}
+                          alt={regions.find((r) => r.id === selectedRegion)?.name}
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div className="absolute bottom-0 left-0 p-6 text-white">
-                          <h2 className="text-3xl font-bold">
-                            {regions.find(r => r.id === selectedRegion)?.name} <span className="text-xl">
-                              {regions.find(r => r.id === selectedRegion)?.japName}
+                        <div className="absolute bottom-0 left-0 p-4 sm:p-6 text-white">
+                          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
+                            {regions.find((r) => r.id === selectedRegion)?.name}{' '}
+                            <span className="text-sm sm:text-lg md:text-xl">
+                              {regions.find((r) => r.id === selectedRegion)?.japName}
                             </span>
                           </h2>
                         </div>
                       </div>
-                      <div className="p-6">
-                        <p className="text-gray-700 mb-6">
-                          {regions.find(r => r.id === selectedRegion)?.description}
+                      <div className="p-4 sm:p-6">
+                        <p className="text-gray-700 text-sm sm:text-base mb-4 sm:mb-6">
+                          {regions.find((r) => r.id === selectedRegion)?.description}
                         </p>
-                        <h3 className="text-xl font-semibold mb-4">Highlights:</h3>
+                        <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Highlights:</h3>
                         <ul className="space-y-2">
-                          {regions.find(r => r.id === selectedRegion)?.highlights.map((highlight, idx) => (
-                            <li key={idx} className="flex items-start">
+                          {regions.find((r) => r.id === selectedRegion)?.highlights.map((highlight, idx) => (
+                            <li key={idx} className="flex items-start text-sm sm:text-base">
                               <span className="text-japan-red mr-2">•</span>
                               <span>{highlight}</span>
                             </li>
@@ -242,14 +242,14 @@ const AreasPage = () => {
                   )}
                 </div>
               ) : (
-                <div className="bg-white rounded-xl shadow-md p-8 flex flex-col items-center justify-center min-h-[400px] text-center">
-                  <img 
-                    src="https://s3-ap-northeast-1.amazonaws.com/bhive-jp/media/yabai/article/2098/2098_1_map_prefectures.jpg" 
-                    alt="Japan Map" 
-                    className="w-full max-w-md mx-auto mb-6 rounded-lg" 
+                <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] text-center">
+                  <img
+                    src="https://s3-ap-northeast-1.amazonaws.com/bhive-jp/media/yabai/article/2098/2098_1_map_prefectures.jpg"
+                    alt="Japan Map"
+                    className="w-full max-w-xs sm:max-w-md mx-auto mb-4 sm:mb-6 rounded-lg"
                   />
-                  <h3 className="text-xl font-semibold mb-3">Select a Region</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Select a Region</h3>
+                  <p className="text-gray-600 text-sm sm:text-base">
                     Choose a region from the list to see detailed information about its geography, culture, and highlights.
                   </p>
                 </div>
@@ -260,50 +260,49 @@ const AreasPage = () => {
       </section>
 
       {/* Prefectures Overview */}
-      <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading 
-            title="Japan's 47 Prefectures" 
-            subtitle="Each region is divided into prefectures, which are the primary administrative divisions in Japan." 
-            className="mb-10"
+          <SectionHeading
+            title="Japan's 47 Prefectures"
+            subtitle="Each region is divided into prefectures, which are the primary administrative divisions in Japan."
+            className="mb-8 sm:mb-10"
           />
-          
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="p-8">
-                <p className="text-gray-700 mb-6">
-                  Japan is divided into 47 prefectures (都道府県, todōfuken), which are the first-level administrative divisions. 
-                  They include 43 prefectures proper (県, ken), two urban prefectures (府, fu: Osaka and Kyoto), one "circuit" or 
-                  "territory" (道, dō: Hokkaido) and one metropolis (都, to: Tokyo).
+              <div className="p-4 sm:p-6 lg:p-8">
+                <p className="text-gray-700 text-sm sm:text-base mb-4 sm:mb-6">
+                  Japan is divided into 47 prefectures (都道府県, todōfuken), which are the first-level administrative divisions.
+                  They include 43 prefectures proper (県, ken), two urban prefectures (府, fu: Osaka and Kyoto), one "circuit" or
+                  "territory" (道, dō: Hokkaido), and one metropolis (都, to: Tokyo).
                 </p>
-                <h3 className="text-xl font-semibold mb-4">Prefecture Types:</h3>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Prefecture Types:</h3>
+                <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                  <li className="flex items-start text-sm sm:text-base">
                     <span className="text-japan-red font-bold mr-2">都 (to):</span>
                     <span>Tokyo Metropolis (Tokyo-to) - the capital</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start text-sm sm:text-base">
                     <span className="text-japan-red font-bold mr-2">道 (dō):</span>
                     <span>Hokkaido - the northern island</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start text-sm sm:text-base">
                     <span className="text-japan-red font-bold mr-2">府 (fu):</span>
                     <span>Osaka and Kyoto - historically important urban prefectures</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start text-sm sm:text-base">
                     <span className="text-japan-red font-bold mr-2">県 (ken):</span>
                     <span>The remaining 43 prefectures</span>
                   </li>
                 </ul>
-                <p className="text-gray-700">
-                  Each prefecture is further divided into cities, towns and villages. Each has its own local government and is 
+                <p className="text-gray-700 text-sm sm:text-base">
+                  Each prefecture is further divided into cities, towns, and villages. Each has its own local government and is
                   overseen by a governor and a unicameral prefecture assembly, both elected by the people.
                 </p>
               </div>
-              <div className="relative h-full min-h-[400px]">
-                <img 
-                  src="https://www.japan-guide.com/ad/japanmap-ad.gif" 
-                  alt="Japan Prefectures Map" 
+              <div className="relative h-64 sm:h-80 lg:h-full min-h-[300px]">
+                <img
+                  src="https://www.researchgate.net/publication/351106013/figure/fig2/AS:1017070426812417@1619499894313/Map-of-Japanese-prefectures-The-Japanese-prefectures-were-divided-into-nine-regions-in_Q320.jpg"
+                  alt="Japan Prefectures Map"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
@@ -313,26 +312,28 @@ const AreasPage = () => {
       </section>
 
       {/* Learn More */}
-      <section className="py-16 px-4 bg-gradient-indigo text-white">
+      <section className="py-12 sm:py-16 px-4 bg-gradient-indigo text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Explore Japan?</h2>
-          <p className="text-lg mb-8">
-            Discover more about each region's unique attractions, cuisine, and cultural experiences.
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+            Ready to Explore Japan?
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
+            Discover more about each region’s unique attractions, cuisine, and cultural experiences.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href="https://www.japan-guide.com/e/e623a.html" 
-              target="_blank" 
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <a
+              href="https://www.japan-guide.com/e/e623a.html"
+              target="_blank"
               rel="noopener noreferrer"
-              className="glass-button"
+              className="glass-button text-sm sm:text-base px-4 py-2 sm:px-5 sm:py-3"
             >
               Regions of Japan Guide
             </a>
-            <a 
-              href="https://matcha-jp.com/en/list/region" 
-              target="_blank" 
+            <a
+              href="https://matcha-jp.com/en/list/region"
+              target="_blank"
               rel="noopener noreferrer"
-              className="glass-button"
+              className="glass-button text-sm sm:text-base px-4 py-2 sm:px-5 sm:py-3"
             >
               Explore All Areas
             </a>

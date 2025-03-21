@@ -106,7 +106,7 @@ const TravelPage = () => {
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                  src="https://d20aeo683mqd6t.cloudfront.net/articles/title_images/000/039/989/medium/shutterstock_129691451_%282%29_%281%29.jpg?2020" 
                   alt="Japan Rail Pass" 
                   className="w-full h-full object-cover"
                 />
@@ -130,7 +130,7 @@ const TravelPage = () => {
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="relative h-64">
                 <img 
-                  src="https://images.unsplash.com/photo-1607337202714-a88f7abbdee3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+                  src="https://www.japanlivingguide.com/media/xrofouit/ic-card-in-japan.jpeg" 
                   alt="IC Cards" 
                   className="w-full h-full object-cover"
                 />
