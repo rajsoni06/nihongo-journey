@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-AI Bot Builder is an advanced tool that allows users to upload documents and receive instant AI-generated insights and summaries. It supports authentication to ensure secure access.
+Designed a website on Japan, combining **Japanese language learning** with **tourist attractions** for an immersive experience. The platform offers **cultural insights, travel guides, and interactive lessons**, helping users explore Japan's heritage and destinations. 🚀
 
 ### Features:
 - **User Authentication**: Secure login for personalized document analysis.
