@@ -1,7 +1,17 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
+  // Get the current location (route) from React Router
+  const location = useLocation();
+
+  // Scroll to the top whenever the location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  // Existing smooth scroll function for the "Back to Top" button
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -112,14 +122,6 @@ const Footer = () => {
             <h3 className="text-lg sm:text-xl font-semibold mb-4 text-japan-sakura">Connect With Us</h3>
             <div className="space-y-3">
               <a
-                href="https://twitter.com/IndianEmbTokyo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-2 bg-white/10 hover:bg-white/20 transition-all rounded-lg text-center connect-button"
-              >
-                Embassy of India in Japan 🇮🇳 🇯🇵
-              </a>
-              <a
                 href="https://rajsoni06.github.io/My_Site/My_Site.html"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -128,15 +130,31 @@ const Footer = () => {
                 Connect with us
               </a>
               <a
+                href="https://twitter.com/IndianEmbTokyo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2 bg-white/10 hover:bg-white/20 transition-all rounded-lg text-center connect-button"
+              >
+                Embassy of India in Japan 🇮🇳 🇯🇵
+              </a>
+              <a
+                href="https://chat.whatsapp.com/JXg1NAqgCKe6QPlr7K5xEq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2 bg-white/10 hover:bg-white/20 transition-all rounded-lg text-center connect-button"
+              >
+                Join India-Japan WhatsApp Group 1
+              </a>
+              <a
                 href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-4 py-2 bg-white/10 hover:bg-white/20 transition-all rounded-lg text-center connect-button"
               >
-                Join India-Japan WhatsApp Group
+                Join India-Japan WhatsApp Group 2
               </a>
               <a
-                href="https://raj-anand-portfolio.netlify.app/"
+                href="https://raj-soni-portfolio-site.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-4 py-2 bg-white/10 hover:bg-white/20 transition-all rounded-lg text-center connect-button"

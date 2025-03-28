@@ -21,31 +21,49 @@ const HomePage = () => {
       src: "Mount_Fuji.jpg",
       alt: "Mount Fuji and Chureito Pagoda",
       title: "Mount Fuji & Chureito Pagoda",
-      style: { filter: 'brightness(1.2) saturate(1.3)' },
+      style: { filter: 'brightness(1.3) saturate(1.4)' },
     },
+    {
+      src: "Seigantoji_Pagoda.jpg",
+      alt: "Seigantoji Pagoda, Japan",
+      title: "Seigantoji Pagoda",
+      style: { filter: "brightness(1.3) saturate(1.4)" }
+    },
+    {
+      src: "Motonosumi_Inari_Shrine.jpg",
+      alt: "Motonosumi Inari Shrine, Japan",
+      title: "Motonosumi Inari Shrine",
+      style: { filter: "brightness(1.3) saturate(1.4)" }
+    },    
+    {
+      src: "Asakusa.jpeg",
+      alt: "Asakusa, Tokyo",
+      title: "Asakusa Temple, Tokyo",
+      style: { filter: "brightness(1.3) saturate(1.4)" }
+    },
+    {
+      src: "Fukuoka_Castle.jpeg",
+      alt: "Fukuoka Castle, Japan",
+      title: "Fukuoka Castle Ruins",
+      style: { filter: "brightness(1.3) saturate(1.4)" }
+    },    
     {
       src: "Arashiyama_bamboo_forest.jpg",
       alt: "Arashiyama Bamboo Grove, Kyoto",
       title: "Arashiyama Bamboo Grove",
-      style: { filter: 'brightness(1.2) saturate(1.3)' },
-    },
-    {
-      src: "Shibuya_crossing.jpg",
-      alt: "Osaka Castle",
-      title: "Osaka Castle",
-      style: { filter: 'brightness(1.2) saturate(1.3)' },
+      style: { filter: 'brightness(1.3) saturate(1.4)' },
     },
     {
       src: "meguro_river.jpg",
       alt: "Meguro River, Tokyo",
       title: "Meguro River",
-      style: { filter: 'brightness(1.2) saturate(1.3)' },
+      style: { filter: 'brightness(1.3) saturate(1.4)' },
     },
     {
       src: "Osaka_castle.jpg",
       alt: "Shibuya Crossing, Tokyo",
       title: "Shibuya Crossing",
-      style: { filter: 'brightness(1.2) saturate(1.3)' },
+      style: { filter: 'brightness(1.3) saturate(1.4)' },
     },
   ];
 
@@ -133,7 +151,7 @@ const HomePage = () => {
             >
               {/* Enhanced Explore Japan Text */}
               <motion.h1
-                className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600 drop-shadow-lg"
+                className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-red-500 to-pink-600 drop-shadow-lg"
                 initial={{ rotateX: -90 }}
                 animate={{ rotateX: 0 }}
                 transition={{ duration: 1 }}

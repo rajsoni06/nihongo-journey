@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
@@ -140,14 +139,14 @@ const PlacesPage = () => {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 px-4 bg-white border-b sticky top-28 z-30 backdrop-blur-md bg-white/90">
+      <section className="py-4 px-4 bg-white border-b sticky top-16 z-30 backdrop-blur-md bg-white/85 w-full">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map(category => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-4 py-2 rounded-lg transition-all ${
+                className={`px-4 py-2 rounded-lg transition-all duration-200 ${
                   activeCategory === category.id
                     ? 'bg-japan-red text-white shadow-md'
                     : 'bg-gray-100 hover:bg-gray-200'
@@ -161,7 +160,7 @@ const PlacesPage = () => {
       </section>
 
       {/* Places Grid */}
-      <section className="py-16 px-4 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-14 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <SectionHeading 
             title={

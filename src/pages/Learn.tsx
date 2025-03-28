@@ -290,7 +290,7 @@ const LearnPage = () => {
                                     externalLink: "https://drive.google.com/file/d/1_FgeXtrY8S-JRY7rhC3uIxyKxQGHYeVK/view?usp=sharing"
                                 },
                                 {
-                                    image: "https://media.licdn.com/dms/image/D4D0DAQFGyamu_EWpvw/learning-public-crop_288_512/0/1729523915707",
+                                    image: "Absolute_Beginner_Course.jpeg",
                                     title: "Absolute Beginner Course",
                                     description: "Comprehensive guide for absolute beginners with basic phrases and vocabulary.",
                                     externalLink: "https://drive.google.com/file/d/1V5VB6F2aSNmrpXw2_9P-9xnoFyLswH-e/view?usp=drivesdk"
@@ -525,7 +525,7 @@ const LearnPage = () => {
                             },
                             {
                                 image: "Vanshika_Sensei_Japan_Obsession.mp4",
-                                title: <span style={{ color: 'black' }}>Learn with Fuji! ✨</span>,
+                                title: <span style={{ color: 'black' }}>Learn with Fuji School! ✨</span>,
                                 description: (
                                     <ul className="space-y-2 text-black">
                                         <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
@@ -552,7 +552,7 @@ const LearnPage = () => {
                                             Flexible Online Classes
                                         </motion.li>
                                         <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-                                            EMI for Easy Learning 🚀
+                                            Expert-Led Training 🚀
                                         </motion.li>
                                     </ul>
                                 )

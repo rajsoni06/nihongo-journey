@@ -1,4 +1,3 @@
-
 import SectionHeading from '../components/SectionHeading';
 import CardComponent from '../components/CardComponent';
 
@@ -271,9 +270,9 @@ const TravelPage = () => {
             </div>
           </div>
           
-          <div className="mt-10 p-8 bg-gradient-indigo rounded-xl shadow-lg text-white text-center">
-            <h3 className="text-2xl font-semibold mb-4">Need More Travel Advice?</h3>
-            <p className="mb-6">
+          <div className="mt-10 p-4 sm:p-8 bg-gradient-indigo rounded-xl shadow-lg text-white text-center">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4">Need More Travel Advice?</h3>
+            <p className="mb-6 text-sm sm:text-base">
               Join our community to connect with experienced travelers and locals who can help plan your perfect Japan trip.
             </p>
             <a 
@@ -282,7 +281,8 @@ const TravelPage = () => {
               rel="noopener noreferrer"
               className="glass-button"
             >
-              Join Our Japan Travel Community
+              <span className="hidden sm:inline">Join Our Japan Travel Community</span>
+              <span className="sm:hidden">Join Community</span>
             </a>
           </div>
         </div>

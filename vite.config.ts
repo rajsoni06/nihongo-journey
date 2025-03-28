@@ -2,35 +2,34 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
+    host: "localhost", // Changed "::" to avoid IPv6-related issues
     port: 8080,
+    open: true, // Auto-open browser
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    // Ensure componentTagger() is defined before using it
+    // mode === "development" && componentTagger(),
+  ].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.join(__dirname, "src"), // More robust path resolution
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   build: {
-    target: "esnext",
-    minify: "esbuild", // Use esbuild for fast minification
-    chunkSizeWarningLimit: 850, // Set to 850KB (reduce unnecessary warnings)
+    chunkSizeWarningLimit: 500, // Set limit for warnings (default is 500kB)
     rollupOptions: {
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            if (id.includes("react")) return "react-vendor"; // Separate React
-            if (id.includes("lodash")) return "lodash-vendor"; // Separate Lodash
-            if (id.includes("recharts")) return "charts-vendor"; // Separate Recharts
-            return "vendor"; // Other dependencies in vendor.js
+            return "vendor"; // Moves dependencies into a separate chunk
           }
         },
       },
     },
+    minify: "esbuild", // Uses esbuild for faster builds
+    target: "esnext", // Optimize for modern browsers
   },
-  esbuild: {
-    drop: ["console", "debugger"], // Remove console logs & debuggers in production
-  },
-});
+}));

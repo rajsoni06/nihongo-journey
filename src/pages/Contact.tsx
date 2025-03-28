@@ -10,24 +10,50 @@ const ContactPage = () => {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Handle form submission with Formspree
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent Successfully",
-        description: "Thank you for contacting us. We'll respond to your query soon!",
+    const formData = {
+      name,
+      query,
+      dateTime,
+      message,
+    };
+
+    try {
+      const response = await fetch('https://formspree.io/f/xaneodjg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
-      // Reset form
-      setName('');
-      setQuery('');
-      setDateTime('');
-      setMessage('');
+      if (response.ok) {
+        toast({
+          title: "Message Sent Successfully",
+          description: "Thank you for contacting us. We'll respond to your query soon!",
+        });
+        // Reset form fields on success
+        setName('');
+        setQuery('');
+        setDateTime('');
+        setMessage('');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -53,99 +79,99 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
       <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading
-            title="Get in Touch"
-            subtitle="Please feel free to contact us with any questions or feedback."
-            center
-            className="mb-8"
+  <div className="max-w-4xl mx-auto">
+    {/* Centered SectionHeading */}
+    <SectionHeading
+      title="Get in Touch"
+      subtitle="Please feel free to contact us with any questions or feedback."
+      center
+      className="mb-2" // Reduced from mb-4 to bring subtitle closer
+    />
+
+    <p className="text-center text-muted-foreground mb-4">
+      Requests in Japanese or English will be responded to quicker.
+    </p>
+
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 md:p-8">
+      <form onSubmit={handleSubmit} className="space-y-4"> {/* Reduced space from space-y-6 to space-y-4 */}
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+            placeholder="Your name"
+            required
           />
-
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 md:p-8">
-            <p className="text-center mb-6 text-muted-foreground">
-              Requests in Japanese or English will be responded to quicker.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-1">
-                  Query Topic
-                </label>
-                <input
-                  id="query"
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                  placeholder="Topic of your inquiry"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="dateTime" className="block text-sm font-medium text-gray-700 mb-1">
-                  Date and Time (if applicable)
-                </label>
-                <input
-                  id="dateTime"
-                  type="datetime-local"
-                  value={dateTime}
-                  onChange={(e) => setDateTime(e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  rows={5}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                  placeholder="Please enter your message here..."
-                  required
-                />
-              </div>
-
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="button-primary inline-flex items-center active:scale-95 transition-transform disabled:opacity-70"
-                >
-                  {isSubmitting ? (
-                    <>Processing<span className="ml-2 animate-pulse">...</span></>
-                  ) : (
-                    <>
-                      Send Message <Send className="ml-2 h-4 w-4" />
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
-      </section>
+
+        <div>
+          <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-1">
+            Query Topic
+          </label>
+          <input
+            id="query"
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+            placeholder="Topic of your inquiry"
+            required
+          />
+        </div>
+
+        <div>
+          <label htmlFor="dateTime" className="block text-sm font-medium text-gray-700 mb-1">
+            Date and Time (if applicable)
+          </label>
+          <input
+            id="dateTime"
+            type="datetime-local"
+            value={dateTime}
+            onChange={(e) => setDateTime(e.target.value)}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            Message
+          </label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            rows={5}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+            placeholder="Please enter your message here..."
+            required
+          />
+        </div>
+
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="button-primary inline-flex items-center active:scale-95 transition-transform disabled:opacity-70"
+          >
+            {isSubmitting ? (
+              <>Processing<span className="ml-2 animate-pulse">...</span></>
+            ) : (
+              <>
+                Send Message <Send className="ml-2 h-4 w-4" />
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
       {/* Direct Contact */}
       <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
@@ -213,20 +239,20 @@ const ContactPage = () => {
               <h3 className="text-xl font-semibold mb-4">Community Groups</h3>
               <div className="space-y-4">
                 <a
-                  href="https://x.com/IndianEmbTokyo?s=09"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-center community-link"
-                >
-                  Embassy of India in Japan 🇮🇳 🇯🇵
-                </a>
-                <a
                   href="https://rajsoni06.github.io/My_Site/My_Site.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-center community-link"
                 >
                   Connect with us
+                </a>
+                <a
+                  href="https://x.com/IndianEmbTokyo?s=09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-center community-link"
+                >
+                  Embassy of India in Japan 🇮🇳 🇯🇵
                 </a>
                 <a
                   href="https://chat.whatsapp.com/JZu3yXhmwqMCoFxc9XZvKM"
@@ -245,7 +271,7 @@ const ContactPage = () => {
                   Direct WhatsApp Message
                 </a>
                 <a
-                  href="https://raj-anand-portfolio.netlify.app/"
+                  href="https://raj-soni-portfolio-site.netlify.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-center community-link"

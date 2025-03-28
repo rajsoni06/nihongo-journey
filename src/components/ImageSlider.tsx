@@ -87,7 +87,7 @@ const ImageSlider = ({
           <div
             key={index}
             className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-              index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              index === currentIndex ? 'opacity-300 z-10' : 'opacity-0 z-0'
             }`}
           >
             {/* Actual image */}
