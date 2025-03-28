@@ -4,7 +4,7 @@
 
 Nihongo Journey is your ultimate destination for exploring Japan’s vibrant culture, breathtaking travel destinations, and immersive language learning resources. Whether you're planning a trip, studying for the **Japanese Language Proficiency Test (JLPT)**, or simply fascinated by Japan, this platform offers everything you need in one place.
 
-![image](https://github.com/user-attachments/assets/0194c7e3-3379-412f-96f1-6dd888a9e9d4)
+![Landing Page](https://github.com/user-attachments/assets/0194c7e3-3379-412f-96f1-6dd888a9e9d4)
 
 ---
 
