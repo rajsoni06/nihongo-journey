@@ -6,13 +6,6 @@ Designed a website on Japan, combining **Japanese language learning** with **tou
 
 ![image](https://github.com/user-attachments/assets/0194c7e3-3379-412f-96f1-6dd888a9e9d4)
 
-
-### Features:
-- **User Authentication**: Secure login for personalized document analysis.
-- **AI-Powered Analysis**: Extract key insights and summaries from documents.
-- **File Upload Support**: Drag & drop or select files for analysis.
-- **Supported Formats**: PDF, DOCX, TXT (Max 25MB).
-
 ## How to Edit the Code
 
 ### Using the Web Interface
