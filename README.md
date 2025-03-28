@@ -43,6 +43,11 @@ Nihongo Journey is built using the **MERN Stack** (MongoDB, Express, React, Node
 
 ## 📸 **Screenshots of homepage, travel guide, and learning platform to showcase UI**
 
+![Home Page](https://github.com/user-attachments/assets/5c27f860-63d6-4958-9c2b-ddf78c172cad)
+![Learn Section](https://github.com/user-attachments/assets/85c7c29a-1059-4a69-b774-8e58ddbb6212)
+![Travel Section](https://github.com/user-attachments/assets/e07a35e3-6f4d-40c6-ae49-d7eb3cd7db1f)
+![Places section](https://github.com/user-attachments/assets/c5705b1f-45e2-4a78-8785-ecce31ea1ab9)
+![Areas Section](https://github.com/user-attachments/assets/2e5a6c88-d0d7-4b2e-979e-388e7139f2ff)
 
 
 ---
@@ -59,7 +64,7 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 💖 Made with ❤️ in India by Raj Soni
+## Made with ❤️ in India by Raj Soni
 
 **Contributions Welcome!** If you’d like to improve Nihongo Journey, feel free to open an issue or submit a pull request! 🚀
 
