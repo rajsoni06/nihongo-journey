@@ -1,12 +1,11 @@
-
-import { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useCallback } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type Image = {
   src: string;
   alt: string;
   caption: string;
-}
+};
 
 interface ImageSliderProps {
   images: Image[];
@@ -20,8 +19,24 @@ const ImageSlider = ({
   autoPlayInterval = 4000,
 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<boolean[]>(new Array(images.length).fill(false));
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Preload images
+  useEffect(() => {
+    images.forEach((image, index) => {
+      const img = new Image();
+      img.src = image.src;
+      img.onload = () => {
+        setLoadedImages((prev) => {
+          const newLoaded = [...prev];
+          newLoaded[index] = true;
+          return newLoaded;
+        });
+      };
+    });
+  }, [images]);
 
   // Navigation functions
   const goToNext = useCallback(() => {
@@ -64,11 +79,11 @@ const ImageSlider = ({
   // Auto-play functionality
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    
+
     if (autoPlay) {
       interval = setInterval(goToNext, autoPlayInterval);
     }
-    
+
     return () => {
       if (interval) clearInterval(interval);
     };
@@ -86,17 +101,24 @@ const ImageSlider = ({
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-              index === currentIndex ? 'opacity-300 z-10' : 'opacity-0 z-0'
+            className={`absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out ${
+              index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
-            {/* Actual image */}
-            <img
-              src={image.src}
-              alt={image.alt}
-              className="w-full h-full object-cover"
-            />
-            
+            {/* Image only renders if loaded to prevent flickering */}
+            {loadedImages[index] ? (
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover brightness-110 contrast-105"
+                loading="lazy"
+              />
+            ) : (
+              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                <span className="text-gray-500 text-sm">Loading...</span>
+              </div>
+            )}
+
             {/* Caption */}
             <div className="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm text-white p-3 transform translate-y-0 transition-transform duration-300">
               <p className="text-sm md:text-base font-medium">{image.caption}</p>
@@ -128,7 +150,7 @@ const ImageSlider = ({
             key={index}
             onClick={() => goToSlide(index)}
             className={`h-2 transition-all duration-300 rounded-full ${
-              index === currentIndex ? 'w-8 bg-white' : 'w-2 bg-white/50'
+              index === currentIndex ? "w-8 bg-white" : "w-2 bg-white/50"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

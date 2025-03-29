@@ -1,5 +1,6 @@
 import SectionHeading from '../components/SectionHeading';
 import CardComponent from '../components/CardComponent';
+import Destinations from '../components/Destinations'; // Added import
 
 const TravelPage = () => {
   return (
@@ -89,6 +90,18 @@ const TravelPage = () => {
               externalLink="https://www.japan-guide.com/e/e2161.html"
             />
           </div>
+        </div>
+      </section>
+
+      {/* Destinations Section */}
+      <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading 
+            title="Explore Destinations" 
+            subtitle="Discover the beauty of Japan's diverse regions" 
+            className="mb-10"
+          />
+          <Destinations />
         </div>
       </section>
 

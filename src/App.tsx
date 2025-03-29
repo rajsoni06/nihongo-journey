@@ -4,12 +4,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion"; // For smooth transitions
+import { AnimatePresence } from "framer-motion";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// Lazy load pages for better performance
 const HomePage = lazy(() => import("./pages/Index"));
 const LearnPage = lazy(() => import("./pages/Learn"));
 const TravelPage = lazy(() => import("./pages/Travel"));
@@ -17,6 +16,7 @@ const PlacesPage = lazy(() => import("./pages/Places"));
 const AreasPage = lazy(() => import("./pages/Areas"));
 const ContactPage = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Chatbot = lazy(() => import("./pages/Chatbot")); // Lazy load the Chatbot component
 
 const queryClient = new QueryClient();
 
@@ -52,6 +52,7 @@ const App = () => (
             </Suspense>
           </main>
           <Footer />
+          <Chatbot /> {/* Chatbot added here */}
         </div>
       </BrowserRouter>
     </TooltipProvider>
