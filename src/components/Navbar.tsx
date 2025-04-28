@@ -408,7 +408,7 @@ const Navbar = () => {
               <button
                 onClick={() => setIsInterestsOpen(!isInterestsOpen)}
                 className="flex items-center justify-between w-full px-3 py-3 text-base font-medium text-white hover:bg-white/20 rounded-md transition-colors duration-200 mt-2"
-              >
+              > 
                 Interests
                 <ChevronDown
                   className={`h-5 w-5 transition-transform duration-300 ${
@@ -420,7 +420,17 @@ const Navbar = () => {
                 className={`pl-4 mt-2 space-y-1 transition-all duration-300 ease-in-out ${
                   isInterestsOpen ? 'max-h-[1000px]' : 'max-h-0 overflow-hidden'
                 }`}
-              >
+              > 
+
+<Link
+      to="/indians-in-japan"
+      className="block px-3 py-2 text-sm text-white hover:bg-white/20 rounded-md transition-colors duration-200"
+      onClick={closeMenu}
+    >
+      🇮🇳 Indians in Japan
+    </Link>
+
+
                 <a
                   href="https://www.japan-guide.com/e/e2025.html"
                   target="_blank"
@@ -621,6 +631,14 @@ const Navbar = () => {
                 {interestsDropdownOpen && (
                   <div className="absolute top-full left-0 mt-1 w-64 max-h-[70vh] overflow-y-auto rounded-md bg-black/90 backdrop-blur-md shadow-lg z-50 border border-white/20 transition-all duration-300 ease-in-out opacity-0 translate-y-[-10px] animate-[fade-in_0.3s_ease-in-out_forwards]">
                     <div className="py-2 px-4 space-y-2">
+
+                    <Link
+      to="/indians-in-japan"
+      className="block px-3 py-2 text-sm text-white hover:bg-white/20 rounded-md transition-colors duration-200"
+      onClick={closeMenu}
+    >
+      🇮🇳 Indians in Japan
+    </Link>
                       <a
                         href="https://www.japan-guide.com/e/e2025.html"
                         target="_blank"

@@ -60,13 +60,13 @@ const TravelPage = () => {
               externalLink="https://www.japan-guide.com/e/e2164.html"
             />
             <CardComponent
-              image="https://e0.pxfuel.com/wallpapers/842/840/desktop-wallpaper-osaka-dotonbori-japan-nightlife.jpg"
+              image="Osaka_City.jpg"
               title="OSAKA (大阪)"
               description="Osaka (大阪) is Japan's second largest metropolitan area after Tokyo. It has been the economic powerhouse of the Kansai Region for many centuries. Osaka was formerly known as Naniwa."
               externalLink="https://www.japan-guide.com/e/e2157.html"
             />
             <CardComponent
-              image="https://e0.pxfuel.com/wallpapers/438/767/desktop-wallpaper-yokohama-1-1920-x-1080.jpg"
+              image="Yokohama.jpg"
               title="YOKOHAMA (横浜)"
               description="Yokohama (横浜市) is the capital of Kanagawa Prefecture, Japan's largest city after Tokyo, located in the Kantō region of the main island of Honshū. It's known for its futuristic Minato Mirai waterfront district and harbor area."
               externalLink="https://www.japan-guide.com/e/e2156.html"

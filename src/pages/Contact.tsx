@@ -14,14 +14,12 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     const formData = {
       name,
       query,
       dateTime,
       message,
     };
-
     try {
       const response = await fetch('https://formspree.io/f/xaneodjg', {
         method: 'POST',
@@ -30,7 +28,6 @@ const ContactPage = () => {
         },
         body: JSON.stringify(formData),
       });
-
       if (response.ok) {
         toast({
           title: "Message Sent Successfully",
@@ -68,7 +65,6 @@ const ContactPage = () => {
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         </div>
-
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
             Contact Us
@@ -76,102 +72,120 @@ const ContactPage = () => {
           <p className="text-lg sm:text-xl max-w-2xl mx-auto animate-fade-in-up">
             Have questions or suggestions? We'd love to hear from you!
           </p>
+          {/* Indians in Japan Button */}
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/indians-in-japan"
+              className="glass-button inline-flex items-center gap-2 relative group"
+            >
+              Indians in Japan
+              {/* Animated Arrow */}
+              <svg
+                className="w-5 h-5 text-white transition-transform duration-300 ease-in-out group-hover:translate-x-1 animate-bounce-right"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
       <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-white to-gray-50">
-  <div className="max-w-4xl mx-auto">
-    {/* Centered SectionHeading */}
-    <SectionHeading
-      title="Get in Touch"
-      subtitle="Please feel free to contact us with any questions or feedback."
-      center
-      className="mb-2" // Reduced from mb-4 to bring subtitle closer
-    />
-
-    <p className="text-center text-muted-foreground mb-4">
-      Requests in Japanese or English will be responded to quicker.
-    </p>
-
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 md:p-8">
-      <form onSubmit={handleSubmit} className="space-y-4"> {/* Reduced space from space-y-6 to space-y-4 */}
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Name
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-            placeholder="Your name"
-            required
+        <div className="max-w-4xl mx-auto">
+          {/* Centered SectionHeading */}
+          <SectionHeading
+            title="Get in Touch"
+            subtitle="Please feel free to contact us with any questions or feedback."
+            center
+            className="mb-2"
           />
+          <p className="text-center text-muted-foreground mb-4">
+            Requests in Japanese or English will be responded to quicker.
+          </p>
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 md:p-8">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-1">
+                  Query Topic
+                </label>
+                <input
+                  id="query"
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+                  placeholder="Topic of your inquiry"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="dateTime" className="block text-sm font-medium text-gray-700 mb-1">
+                  Date and Time (if applicable)
+                </label>
+                <input
+                  id="dateTime"
+                  type="datetime-local"
+                  value={dateTime}
+                  onChange={(e) => setDateTime(e.target.value)}
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  rows={5}
+                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+                  placeholder="Please enter your message here..."
+                  required
+                />
+              </div>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="button-primary inline-flex items-center active:scale-95 transition-transform disabled:opacity-70"
+                >
+                  {isSubmitting ? (
+                    <>Processing<span className="ml-2 animate-pulse">...</span></>
+                  ) : (
+                    <>
+                      Send Message <Send className="ml-2 h-4 w-4" />
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-
-        <div>
-          <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-1">
-            Query Topic
-          </label>
-          <input
-            id="query"
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-            placeholder="Topic of your inquiry"
-            required
-          />
-        </div>
-
-        <div>
-          <label htmlFor="dateTime" className="block text-sm font-medium text-gray-700 mb-1">
-            Date and Time (if applicable)
-          </label>
-          <input
-            id="dateTime"
-            type="datetime-local"
-            value={dateTime}
-            onChange={(e) => setDateTime(e.target.value)}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Message
-          </label>
-          <textarea
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            rows={5}
-            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-            placeholder="Please enter your message here..."
-            required
-          />
-        </div>
-
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="button-primary inline-flex items-center active:scale-95 transition-transform disabled:opacity-70"
-          >
-            {isSubmitting ? (
-              <>Processing<span className="ml-2 animate-pulse">...</span></>
-            ) : (
-              <>
-                Send Message <Send className="ml-2 h-4 w-4" />
-              </>
-            )}
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Direct Contact */}
       <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
@@ -182,7 +196,6 @@ const ContactPage = () => {
             center
             className="mb-10"
           />
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div className="bg-white rounded-xl shadow-md p-6 card-3d">
               <h3 className="text-xl font-semibold mb-4">Social Media</h3>
@@ -234,7 +247,6 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
-
             <div className="bg-white rounded-xl shadow-md p-6 card-3d">
               <h3 className="text-xl font-semibold mb-4">Community Groups</h3>
               <div className="space-y-4">
@@ -292,7 +304,6 @@ const ContactPage = () => {
             subtitle="Promote Your Japanese Language Courses with Us!"
             className="mb-10 text-white"
           />
-
           <div className="space-y-6">
             {/* Advertising Section */}
             <div className="glass p-6 rounded-xl card-3d">
@@ -307,7 +318,6 @@ const ContactPage = () => {
                 <li>📞 Direct Student Engagement – Receive inquiries through our platform.</li>
               </ul>
             </div>
-
             {/* Affiliate Marketing */}
             <div className="glass p-6 rounded-xl card-3d">
               <h3 className="text-xl font-semibold mb-3">🤝 Affiliate Marketing Partnerships</h3>
@@ -319,7 +329,6 @@ const ContactPage = () => {
                 <li>🔐 VPN services for accessing Japanese content</li>
               </ul>
             </div>
-
             {/* Premium Content & Services */}
             <div className="glass p-6 rounded-xl card-3d">
               <h3 className="text-xl font-semibold mb-3">💎 Premium Content & Services</h3>
@@ -331,7 +340,6 @@ const ContactPage = () => {
                 <li>🎓 Live Online Tutoring with Expert Instructors</li>
               </ul>
             </div>
-
             {/* Google AdSense & Digital Products */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="glass p-6 rounded-xl card-3d">
@@ -347,7 +355,6 @@ const ContactPage = () => {
                 </p>
               </div>
             </div>
-
             {/* Japan Tour Partnerships */}
             <div className="glass p-6 rounded-xl card-3d">
               <h3 className="text-xl font-semibold mb-3">🌏 Japan Tour Partnerships</h3>
@@ -368,3 +375,40 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+// Styles for the Indians in Japan Button
+<style>
+  {`
+    /* Bounce Animation */
+    @keyframes bounce-right {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(4px);
+      }
+    }
+    /* Apply the animation to the arrow */
+    .animate-bounce-right {
+      animation: bounce-right 1.5s infinite;
+    }
+    /* Hover Effect for the Link */
+    .glass-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      backdrop-filter: blur(10px);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+    .glass-button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+  `}
+</style>

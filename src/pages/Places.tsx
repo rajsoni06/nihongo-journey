@@ -33,7 +33,7 @@ const PlacesPage = () => {
     },
     {
       id: 3,
-      image: "https://www.michaelhaessig.com/assets/japan/kyoto-1/shinkansen.gif",
+      image: "Bullet_Train.jpg",
       title: "BULLET TRAIN (新幹線)",
       description: "Shinkansen (新幹線) in Japanese means 'new trunk line' or 'new main line', but this word is used to describe both the railway lines the trains run on. The trains are also known as the bullet train.",
       link: "https://www.japan-guide.com/e/e2018.html",

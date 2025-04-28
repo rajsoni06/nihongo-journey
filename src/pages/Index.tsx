@@ -291,7 +291,7 @@ const HomePage = () => {
               transition={{ type: 'spring', stiffness: 300 }}
             >
               <CardComponent
-                image="https://www.michaelhaessig.com/assets/japan/kyoto-1/shinkansen.gif"
+                image="Bullet_Train.jpg"
                 title="BULLET TRAIN (新幹線)"
                 description="High-speed rail known as the bullet train."
                 externalLink="https://www.japan-guide.com/e/e2018.html"
@@ -322,6 +322,65 @@ const HomePage = () => {
             <Link to="/travel" className="glass-button">
               Explore Travel Guides
             </Link>
+            <Link to="/indians-in-japan"
+  className="glass-button inline-flex items-center gap-2 relative group"
+>
+  Indians in Japan
+  {/* Animated Arrow */}
+  <svg
+    className="w-5 h-5 text-white transition-transform duration-300 ease-in-out group-hover:translate-x-1 animate-bounce-right"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M17 8l4 4m0 0l-4 4m4-4H3"
+    />
+  </svg>
+</Link>
+
+<style>
+  {`
+    /* Bounce Animation */
+    @keyframes bounce-right {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(4px);
+      }
+    }
+
+    /* Apply the animation to the arrow */
+    .animate-bounce-right {
+      animation: bounce-right 1.5s infinite;
+    }
+
+    /* Hover Effect for the Link */
+    .glass-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      backdrop-filter: blur(10px);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .glass-button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+  `}
+</style>
           </div>
         </div>
       </section>
