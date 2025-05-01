@@ -85,6 +85,34 @@ export const youtubers = [
     },
     {
       id: 4,
+      name: "Ankit Purohit",
+      images: ["/Ankit_1.jpg", "/Ankit_2.jpg", "/Ankit_3.jpg", "/Ankit_4.jpg"],
+      shortDescription: "Ankit Purohit is an Indian YouTuber and fitness enthusiast based in Tokyo, Japan. He creates engaging content that blends travel, fitness, and entertainment, offering viewers a unique perspective on life in Japan and beyond.",
+      fullDescription: `
+        Ankit Purohit is an Indian content creator and fitness enthusiast who has made Tokyo, Japan, his home since 2016. With a strong academic background, including a Bachelor's degree in Computer Engineering from Nagpur University, a Master's in Mechatronics from Savitribai Phule Pune University, and an MBA in Analytics from the Indian Institute of Management Kashipur, Ankit combines technical expertise with creative storytelling.
+    
+        Professionally, Ankit serves as a Service Transition Manager at NTT Ltd.'s Global Managed Services Division, where he leverages his skills in cloud computing, IoT, and machine learning. His passion for fitness led him to compete in events like the NPCJ Men's Physique contest in Japan and the Vidarbha Shri competition in India, achieving notable placements.
+    
+        On his YouTube channel, Ankit shares travel vlogs, fitness routines, and cultural experiences, aiming to inspire and motivate his audience. His content reflects his journey of personal growth, cross-cultural exploration, and a commitment to a healthy lifestyle.
+    
+        As of April 2025, Ankit's YouTube channel, Ankit Purohit Vlogs, has over 106,000 subscribers and more than 21.6 million views across 513 videos. His engaging mix of fitness, travel, and cultural content continues to attract a growing global audience.
+    
+        Ankit's dedication to authentic storytelling and knowledge-sharing has helped build a vibrant online community that values health, curiosity, and connection. Through his work, he promotes cross-cultural understanding and encourages people to pursue their goals with passion and consistency.
+      `,
+      link: "https://www.youtube.com/@ankitpurohitvlogs",
+      rrjAcademyLink: "https://www.linkedin.com/in/ankit-purohit-163221127/",
+      socialMedia: {
+        linkedin: "https://www.linkedin.com/in/ankit-purohit-163221127/",
+        instagram: "https://www.instagram.com/ankit_purohit_japan/",
+        threads: "https://threads.net/@ankit_purohit_japan"
+      },
+      videoUrls: [
+        "https://www.youtube.com/embed/3YqV0kJVnJ4",
+        "https://www.youtube.com/embed/S5jivKKX7tM"
+      ],
+    },       
+    {
+      id: 5,
       name: "Mayo Hitomi",
       images: ["/Mayo_1.jpg", "/Mayo_2.jpg", "/Mayo_3.jpg", "/Mayo_4.jpg"],
       shortDescription: "Mayo Hitomi, famously known as Mayo Japan, is a Japanese YouTuber and language educator who promotes Indian culture with her fluent Hindi. She creates engaging content, from language tutorials to cultural vlogs, connecting Japanese and Indian audiences. With millions of followers, Mayo continues to bridge two vibrant cultures through her creativity and passion.",
@@ -114,7 +142,7 @@ export const youtubers = [
       ],
     },
     {
-        id: 5,
+        id: 6,
         name: "MaharaJapan",
         slug: "maharajapan",
         images: ["/MaharaJapan_1.jpg", "/MaharaJapan_2.jpg", "/MaharaJapan_3.jpg", "/MaharaJapan_4.jpg"], 
@@ -149,7 +177,7 @@ export const youtubers = [
         ],
         },             
     {
-        id: 6,
+        id: 7,
         name: "Namaste Kohei",
         slug: "namastekohei",
         images: ["/Kohei_1.jpg", "/Kohei_2.jpg", "/Kohei_3.jpg", "/Kohei_4.jpg"], // Placeholder images

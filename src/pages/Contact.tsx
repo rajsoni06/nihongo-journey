@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { toast } from '@/hooks/use-toast';
+import { motion } from 'framer-motion';
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, Send } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading';
 
@@ -9,6 +10,7 @@ const ContactPage = () => {
   const [dateTime, setDateTime] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [contactNumber, setContactNumber] = useState("");
 
   // Handle form submission with Formspree
   const handleSubmit = async (e) => {
@@ -100,92 +102,149 @@ const ContactPage = () => {
       </section>
 
       <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-4xl mx-auto">
-          {/* Centered SectionHeading */}
-          <SectionHeading
-            title="Get in Touch"
-            subtitle="Please feel free to contact us with any questions or feedback."
-            center
-            className="mb-2"
+  <div className="max-w-md mx-auto"> {/* Reduced width of the container */}
+    {/* Centered Heading with Animated Underline */}
+    <div className="text-center mb-8">
+      <motion.h2 
+        className="text-3xl font-bold text-gray-900 mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Get in Touch
+      </motion.h2>
+      
+      <motion.div
+        className="flex flex-col items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
+        <p className="text-lg sm:text-base text-gray-600 mb-2"> {/* Allow text to wrap */}
+          Please feel free to contact us with any questions or feedback.
+        </p>
+        <p className="text-gray-500 mb-2">
+          Requests in Japanese or English will be responded to quicker.
+        </p>
+      </motion.div>
+
+      {/* Animated Red Underline */}
+      <motion.div
+        className="relative mt-6 h-1"
+        animate={{
+          width: ["0%", "100%", "0%"], // Pulsate from 0 to full width and back
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 4, // Increased from 2.5s to 4s
+          repeatDelay: 1.5, // Optional: adds a 1.5s pause before repeating
+          ease: "easeInOut",
+        }}
+      >
+        <div className="absolute h-full bg-japan-red left-0 right-0">
+          <motion.div
+            className="absolute -top-1 -left-1 w-3 h-3 bg-japan-red rounded-full"
+            initial={{ scale: 0 }}
+            animate={{ scale: [0, 1, 0] }} // Optional pulsing effect on dot
+            transition={{
+              repeat: Infinity,
+              duration: 3.5,
+              repeatDelay: 1.8,
+              ease: "easeInOut",
+            }}
           />
-          <p className="text-center text-muted-foreground mb-4">
-            Requests in Japanese or English will be responded to quicker.
-          </p>
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 md:p-8">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-1">
-                  Query Topic
-                </label>
-                <input
-                  id="query"
-                  type="text"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                  placeholder="Topic of your inquiry"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="dateTime" className="block text-sm font-medium text-gray-700 mb-1">
-                  Date and Time (if applicable)
-                </label>
-                <input
-                  id="dateTime"
-                  type="datetime-local"
-                  value={dateTime}
-                  onChange={(e) => setDateTime(e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  rows={5}
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
-                  placeholder="Please enter your message here..."
-                  required
-                />
-              </div>
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="button-primary inline-flex items-center active:scale-95 transition-transform disabled:opacity-70"
-                >
-                  {isSubmitting ? (
-                    <>Processing<span className="ml-2 animate-pulse">...</span></>
-                  ) : (
-                    <>
-                      Send Message <Send className="ml-2 h-4 w-4" />
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
+          <motion.div
+            className="absolute -top-1 -right-1 w-3 h-3 bg-japan-red rounded-full"
+            initial={{ scale: 0 }}
+            animate={{ scale: [0, 1, 0] }} // Optional matching pulse on end dot
+            transition={{
+              repeat: Infinity,
+              duration: 3.5,
+              repeatDelay: 1.8,
+              ease: "easeInOut",
+            }}
+          />
         </div>
-      </section>
+      </motion.div>
+    </div>
+
+    {/* Form */}
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden p-4 sm:p-6 md:p-8">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+            placeholder="Your name"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="query" className="block text-sm font-medium text-gray-700 mb-1">
+            Query Topic
+          </label>
+          <input
+            id="query"
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+            placeholder="Topic of your inquiry"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="contactNumber" className="block text-sm font-medium text-gray-700 mb-1">
+            Contact Number
+          </label>
+          <input
+            id="contactNumber"
+            type="tel"
+            value={contactNumber}
+            onChange={(e) => setContactNumber(e.target.value)}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+            placeholder="Your phone number"
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            Message
+          </label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            rows={5}
+            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-japan-red focus:border-transparent"
+            placeholder="Please enter your message here..."
+            required
+          />
+        </div>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="button-primary inline-flex items-center active:scale-95 transition-transform disabled:opacity-70"
+          >
+            {isSubmitting ? (
+              <>Processing<span className="ml-2 animate-pulse">...</span></>
+            ) : (
+              <>
+                Send Message <Send className="ml-2 h-4 w-4" />
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
       {/* Direct Contact */}
       <section className="py-12 sm:py-16 px-4 bg-gradient-to-b from-gray-50 to-white">

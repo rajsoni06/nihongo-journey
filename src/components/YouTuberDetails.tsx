@@ -31,18 +31,29 @@ const YouTuberDetails = () => {
     },
   };
 
-  // Slider settings for automatic image carousel
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800, // Slightly slower transition for smoother effect
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3000, // Increased duration for better viewing
     arrows: false,
+    // Custom dots styling
+    appendDots: dots => (
+      <div className="pb-4">
+        <ul className="flex justify-center gap-2">{dots}</ul>
+      </div>
+    ),
+    customPaging: i => (
+      <div className="w-2.5 h-2.5 rounded-full bg-white bg-opacity-30 hover:bg-opacity-100 transition-all duration-300"></div>
+    ),
+    // Fade effect instead of slide
+    fade: true,
+    // Smooth easing
+    cssEase: 'cubic-bezier(0.25, 0.1, 0.25, 1)'
   };
-
   // Dynamic content generation functions
   const getEarlyLifeAndEducation = () => {
     switch (youtuber.id) {
@@ -53,10 +64,12 @@ const YouTuberDetails = () => {
       case 3:
         return "Taba Yam Ana hails from Arunachal Pradesh, India, where she initially pursued a law degree. Her passion for travel and storytelling led her to pivot from a legal career to becoming a full-time content creator, exploring cultures across Asia and beyond.";
       case 4:
-        return "Born near Fukuoka, Japan, Mayo Hitomi developed an interest in Hindi inspired by her father, Goro Hitomi, a Himalayan climber who frequently visited India. She pursued Hindi studies at Osaka University and spent a year at Kendriya Hindi Sansthan in India to deepen her language skills.";
+        return "Ankit Purohit hails from Maharashtra, India. He earned a Bachelor's degree in Computer Engineering from Nagpur University, followed by a Master's in Mechatronics from Savitribai Phule Pune University. Currently, he is pursuing an MBA in Analytics at the Indian Institute of Management Kashipur.";
       case 5:
-        return "MaharaJapan is a YouTube channel run by Japanese students who have spent time in India. The team members, Fumiko, Ren, and Izumi, have diverse backgrounds but share a passion for cultural exchange. They developed a deep connection to Indian culture during their stay, which inspired them to share their experiences with a wider audience.";
+        return "Born near Fukuoka, Japan, Mayo Hitomi developed an interest in Hindi inspired by her father, Goro Hitomi, a Himalayan climber who frequently visited India. She pursued Hindi studies at Osaka University and spent a year at Kendriya Hindi Sansthan in India to deepen her language skills.";
       case 6:
+        return "MaharaJapan is a YouTube channel run by Japanese students who have spent time in India. The team members, Fumiko, Ren, and Izumi, have diverse backgrounds but share a passion for cultural exchange. They developed a deep connection to Indian culture during their stay, which inspired them to share their experiences with a wider audience.";
+      case 7:
         return "Kohei Takamatsu, born in Zushi, Kanagawa, Japan, began playing the violin at age three. He studied at the Tokyo College of Music. Inspired by A.R. Rahman's music in Slumdog Millionaire, he moved to India and studied Hindi at the Central Hindi Institute in Mysore.";
       default:
         return "Information not available.";
@@ -72,10 +85,12 @@ const YouTuberDetails = () => {
       case 3:
         return "Taba Yam Ana started her YouTube channel to document her travels across ten countries, including South Korea, Japan, and the Philippines. Her channel inspires viewers to explore the world as curious adventurers, building a community of like-minded travelers.";
       case 4:
-        return "Mayo started her YouTube journey teaching Hindi to Japanese audiences but shifted to creating Japanese language tutorials and cultural vlogs in Hindi for Indian viewers. Her viral Holi festival video in Nishikasai, Japan, gained her over 50,000 subscribers overnight, leading to over 3.5 million subscribers today.";
+        return "Ankit launched his YouTube channel, @ankitpurohitvlogs, on October 7, 2018. His content focuses on travel vlogs, fitness routines, and cultural experiences in Japan and other countries. As of December 2024, he has over 83,000 subscribers and continues to grow his audience by sharing engaging and motivational content.";
       case 5:
-        return "MaharaJapan was launched on October 26, 2020. The channel has grown significantly, amassing over 167K subscribers and more than 52 million views. Their content primarily focuses on engaging with Indian culture, with a mix of challenges, reactions, and cultural comparisons, helping bridge the gap between Japanese and Indian communities.";
+        return "Mayo started her YouTube journey teaching Hindi to Japanese audiences but shifted to creating Japanese language tutorials and cultural vlogs in Hindi for Indian viewers. Her viral Holi festival video in Nishikasai, Japan, gained her over 50,000 subscribers overnight, leading to over 3.5 million subscribers today.";
       case 6:
+        return "MaharaJapan was launched on October 26, 2020. The channel has grown significantly, amassing over 167K subscribers and more than 52 million views. Their content primarily focuses on engaging with Indian culture, with a mix of challenges, reactions, and cultural comparisons, helping bridge the gap between Japanese and Indian communities.";
+      case 7:
         return "Kohei launched his YouTube channel, Namaste Kohei, in October 2016, initially sharing violin covers of Bollywood songs. Over time, he expanded his content to include mashups, cultural reaction videos, and street interviews, often conversing in Hindi with Indian tourists in Japan. His unique blend of music and cross-cultural content garnered him over 2.6 million subscribers.";
       default:
         return "Information not available.";
@@ -91,10 +106,12 @@ const YouTuberDetails = () => {
       case 3:
         return "Ana’s content style focuses on curated travel itineraries, cultural experiences, and practical travel tips. She uses high-quality equipment like the DJI Pocket 3 and iPhone 16 Pro Max to create vibrant vlogs, emphasizing authentic cultural connections.";
       case 4:
-        return "Mayo’s content blends language education, cultural vlogs, and dance videos, bridging Japanese and Indian cultures. She also promotes Japanese brands and runs the Ani Mayo Channel to introduce anime to Indian audiences.";
+        return "Ankit's content style is a blend of travel, fitness, and cultural exploration. He offers viewers an authentic look into life in Japan, shares his fitness journey, and provides motivational insights, all aimed at inspiring a healthier and more adventurous lifestyle.";
       case 5:
-        return "The content on MaharaJapan blends fun challenges, cultural exchanges, and lighthearted reactions to Indian life and traditions. The videos often feature the hosts interacting with locals, exploring cultural differences, and introducing aspects of Japanese culture to their Indian audience, making the channel relatable and entertaining for both cultures.";
+        return "Mayo’s content blends language education, cultural vlogs, and dance videos, bridging Japanese and Indian cultures. She also promotes Japanese brands and runs the Ani Mayo Channel to introduce anime to Indian audiences.";
       case 6:
+        return "The content on MaharaJapan blends fun challenges, cultural exchanges, and lighthearted reactions to Indian life and traditions. The videos often feature the hosts interacting with locals, exploring cultural differences, and introducing aspects of Japanese culture to their Indian audience, making the channel relatable and entertaining for both cultures.";
+      case 7:
         return "Kohei's content combines musical performances and cultural exploration. He's known for violin renditions of Hindi film songs, reaction videos to Indian culture, and street interviews. His ability to connect through music and language has made him a beloved figure in Indo-Japanese cultural exchanges.";
       default:
         return "Information not available.";
@@ -361,39 +378,64 @@ transition={{ duration: 0.5, delay: 1 }}
   }
 `}
 </style>
+            
+
+
             {/* Social Media Section */}
-            <motion.div
-              className="p-6 md:p-10 bg-gray-100"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              <h2 className="text-base md:text-lg font-semibold text-gray-800 mb-4 text-center">
-  Connect with {youtuber.name}
-</h2>
-              <div className="flex justify-center gap-4">
-                {youtuber.socialMedia?.instagram && (
-                  <a
-                    href={youtuber.socialMedia.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-medium text-sm md:text-base"
-                  >
-                    Instagram
-                  </a>
-                )}
-                {youtuber.socialMedia?.threads && (
-                  <a
-                    href={youtuber.socialMedia.threads}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-medium text-sm md:text-base"
-                  >
-                    Threads
-                  </a>
-                )}
-              </div>
-            </motion.div>
+<motion.div
+  className="p-6 md:p-10 bg-gray-100 rounded-b-2xl"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 1.2 }}
+>
+  <h2 className="text-base md:text-lg font-semibold text-gray-800 mb-4 text-center">
+    Connect with {youtuber.name}
+  </h2>
+  <div className="flex justify-center gap-4 flex-wrap">
+    {youtuber.socialMedia?.instagram && (
+      <a
+        href={youtuber.socialMedia.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full hover:from-purple-600 hover:to-indigo-700 transition-all duration-300 text-sm md:text-base shadow-sm hover:shadow-md"
+      >
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+        </svg>
+        Instagram
+      </a>
+    )}
+    {youtuber.socialMedia?.threads && (
+      <a
+        href={youtuber.socialMedia.threads}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-900 text-white rounded-full hover:from-gray-800 hover:to-gray-950 transition-all duration-300 text-sm md:text-base shadow-sm hover:shadow-md"
+      >
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fillRule="evenodd" d="M12 2c-2.236 0-4.43.18-6.57.524C3.18 2.755 2 4.014 2 5.426v13.148c0 1.413 1.192 2.673 2.822 2.94 1.629.267 3.31.486 5.178.486s3.548-.22 5.178-.487c1.63-.267 2.822-1.526 2.822-2.94V5.426c0-1.412-1.192-2.67-2.822-2.902C16.43 2.18 14.236 2 12 2zM9 8h6v2H9V8zm0 4h6v2H9v-2z" clipRule="evenodd" />
+        </svg>
+        Threads
+      </a>
+    )}
+    {youtuber.socialMedia?.linkedin && (
+      <a
+        href={youtuber.socialMedia.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 text-sm md:text-base shadow-sm hover:shadow-md"
+      >
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
+        </svg>
+        LinkedIn
+      </a>
+    )}
+  </div>
+</motion.div>
+
+
+
             {/* Home Button Bottom */}
             <motion.div
               className="p-6 md:p-10 text-center"

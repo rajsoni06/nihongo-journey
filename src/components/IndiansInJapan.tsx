@@ -79,17 +79,15 @@ const IndiansInJapan = () => {
   initial="hidden"
   animate={controls}
 >
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {youtubers.slice(0, 3).map((youtuber) => (
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    {youtubers.filter(y => [1, 2, 3, 4].includes(y.id)).map((youtuber) => (
       <motion.div
         key={youtuber.id}
         variants={item}
-        className="group relative bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-80 mx-auto" 
-        // <-- set fixed width (w-80 ~ 320px) and center (mx-auto)
+        className="group relative bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-80 mx-auto"
       >
         {/* Image Container */}
-        <div className="relative w-full h-80 overflow-hidden rounded-t-2xl flex items-center justify-center"> 
-          {/* height increased to h-80 (320px) */}
+        <div className="relative w-full h-80 overflow-hidden rounded-t-2xl flex items-center justify-center">
           {youtuber.images?.[0] ? (
             <motion.img
               src={youtuber.images[0]}
@@ -145,51 +143,47 @@ const IndiansInJapan = () => {
   </div>
 </motion.div>
 
+{/* Heading for Japanese Influencers */}
+<motion.div
+  className="mt-16 text-center"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.5 }}
+>
+  <motion.h2
+    className="text-3xl font-bold text-white mb-6"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1, delay: 0.2 }}
+  >
+    Japanese Influencers Promoting India
+  </motion.h2>
+  <motion.p
+    className="text-lg text-gray-100 max-w-3xl mx-auto"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1, delay: 0.4 }}
+  >
+    Discover Japanese influencers who know Hindi and explore India.
+  </motion.p>
+</motion.div>
 
+<br />
+<br />
 
-
-      {/* Heading for Japanese Influencers */}
-      <motion.div
-        className="mt-16 text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-      >
-        <motion.h2
-          className="text-3xl font-bold text-white mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          Japanese Influencers Promoting India
-        </motion.h2>
-        <motion.p
-          className="text-lg text-gray-100 max-w-3xl mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-        >
-          Discover Japanese influencers who know Hindi and explore India.
-        </motion.p>
-      </motion.div>
-      
-      <br />
-      <br />
-
-      {/* Content Grid for Japanese Influencers */}
+{/* Content Grid for Japanese Influencers Promoting India */}
 <motion.div
   className="max-w-7xl mx-auto mb-16"
   variants={container}
   initial="hidden"
   animate={controls}
 >
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {youtubers.slice(3, 6).map((youtuber) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    {youtubers.filter(y => ["Mayo Hitomi", "MaharaJapan", "Namaste Kohei"].includes(y.name)).map((youtuber) => (
       <motion.div
         key={youtuber.id}
         variants={item}
-        className="group relative bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-80 mx-auto" 
-        // <-- fixed width and centered
+        className="group relative bg-gray-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 w-80 mx-auto"
       >
         {/* Image Container */}
         <div className="relative w-full h-80 overflow-hidden rounded-t-2xl flex items-center justify-center">
@@ -214,15 +208,10 @@ const IndiansInJapan = () => {
         <div className="p-6">
           <div className="flex justify-between items-start mb-4">
             <h2 className="text-xl font-bold text-white">{youtuber.name}</h2>
-            {youtuber.subscribers && (
-              <span className="bg-pink-500 text-white px-3 py-1 rounded-full text-sm">
-                {youtuber.subscribers.toLocaleString()} Subscribers
-              </span>
-            )}
           </div>
 
           <p className="text-gray-300 text-sm mb-4 line-clamp-4">
-            {youtuber.extendedDescription || youtuber.shortDescription}
+            {youtuber.shortDescription}
           </p>
 
           <Link
@@ -230,8 +219,18 @@ const IndiansInJapan = () => {
             className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full text-sm font-medium hover:from-pink-600 hover:to-purple-700 transition-all duration-300 group"
           >
             Explore Journey
-            <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <svg
+              className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
             </svg>
           </Link>
         </div>
@@ -239,7 +238,6 @@ const IndiansInJapan = () => {
     ))}
   </div>
 </motion.div>
-
 
       {/* Bottom Home Button */}
       <motion.div
